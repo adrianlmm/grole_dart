@@ -1,0 +1,99 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>ModalP Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="styles.css">
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="favicon.ico">
+        
+        </head>
+        <body data-library="ModalP">
+        <div class="page">
+        <div class="header">
+          <a href="index.html"><div class="logo"></div></a>
+          <a href="index.html">Dart Documentation</a>
+         &rsaquo; <a href="ModalP.html">ModalP</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+<h2><div class="icon-library"></div><a href="date_format_internal.html">date_format_internal</a></h2><h2><div class="icon-library"></div><a href="date_symbols.html">date_symbols</a></h2><h2><div class="icon-library"></div><a href="DetalleMP.html">DetalleMP</a></h2><h2><div class="icon-library"></div><a href="intl.html">intl</a></h2><h2><div class="icon-library"></div><a href="intl_helpers.html">intl_helpers</a></h2><h2><div class="icon-library"></div><a href="LibOrdenProduccion.html">LibOrdenProduccion</a></h2><h2><div class="icon-library"></div><a href="meta.html">meta</a></h2><h2><div class="icon-library"></div><a href="metadata.html">metadata</a></h2><h2><div class="icon-library"></div><strong>ModalP</strong></h2><h2><div class="icon-library"></div><a href="number_symbols.html">number_symbols</a></h2><h2><div class="icon-library"></div><a href="number_symbol_data.html">number_symbol_data</a></h2><h2><div class="icon-library"></div><a href="OrdenPP.html">OrdenPP</a></h2><h2><div class="icon-library"></div><a href="SalidaInventario.html">SalidaInventario</a></h2><h2><div class="icon-library"></div><a href="surtir_orden.dart.html">surtir_orden.dart</a></h2></div>
+<div class="content">
+<h2><strong>ModalP</strong> library</h2>
+<div>
+<h3>Functions</h3>
+<div class="method"><h4 id="modal">
+<button class="show-code">Code</button>
+void <strong>modal</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> AContainer) <a class="anchor-link" href="#modal"
+              title="Permalink to modal">#</a></h4>
+<div class="doc">
+<pre class="source">
+void modal(String AContainer) {
+   DivElement m1 = querySelector("#${AContainer}-body");
+   DivElement mc = querySelector("#${AContainer}");
+   
+   m1.style.position = "block";
+   m1.style.backgroundColor = "white";
+   m1.style.borderColor = "gray";
+   m1.style.borderWidth = "1px";
+   m1.style.borderStyle = "solid";
+   
+   m1.style.top = "0px";
+   m1.style.zIndex = "9999";
+   m1.style.padding = "5px";
+   m1.style.boxShadow = "5px 5px 3px #888888";
+   
+   mc.style.backgroundColor = "rgba(190, 190, 190, 0.5)";
+   mc.style.opacity  = "50%";
+   mc.style.zIndex   = "9998";
+   mc.style.width    = "100%";
+   mc.style.height   = "5000px";
+   mc.style.position = "absolute";
+   mc.style.margin   = "0px";
+   mc.style.top      = "0px";
+   
+   mc.style.display = "block";
+   
+   var sw = m1.scrollWidth / 2;
+   var sh = m1.scrollHeight / 2;
+   var top     = 50;
+   
+   var windowHeight = window.innerHeight;
+   var mtop = ((windowHeight / 2) - sh) - 25;
+   
+   m1.style.margin = "0 auto";
+   m1.style.marginTop  = "${mtop}px";
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="cierra_modal">
+<button class="show-code">Code</button>
+void <strong>cierra_modal</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> AContainer) <a class="anchor-link" href="#cierra_modal"
+              title="Permalink to cierra_modal">#</a></h4>
+<div class="doc">
+<pre class="source">
+void cierra_modal(String AContainer) {
+   DivElement mc = querySelector("#${AContainer}");
+   mc.style.display = "none";
+}
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        <div class="footer">
+          <div>This page was generated at 2014-01-16 10:01:29.606</div>
+        </div>
+        <script async src="client-static.js"></script>
+        </body></html>
+        

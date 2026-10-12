@@ -1,0 +1,8 @@
+name: lista_orden_p
+description: A sample WebUI application
+dependencies:
+  browser: any
+  intl: any
+  js: any
+  web_ui: 0.4.23
+  widget: any

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="scaffolded-by" content="https://github.com/dart-lang/stagehand">
+    <title>listado_salida3</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+    <link href="/styles/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <script defer src="listado_salidas.dart.js"></script>
+</head>
+
+<body>
+
+    <div class="container" style="width: 90%;">
+        <h2>Listado de salidas</h2>
+        <div>
+            <div style="float: left; margin-top: 8px;">
+                <div>
+                    Fecha Inicial:
+                </div>
+                <div style="float: left; margin-left: 3px;">
+                    <input type="text" id="inpFechaInicial" style="width:120px; height: 20px;">
+                </div>
+            </div>
+            <div style="float: left; margin-top: 8px;" >
+                <div>
+                    Fecha Final:
+                </div>
+                <div style="float: left; margin-left: 3px; ">
+                    <input type="text" id="inpFechaFinal" style="width: 120px; height: 20px;">
+                </div>
+            </div>
+            <div style="float: left; margin-top: 8px;" >
+                <div>
+                    Destino:
+                </div>
+                <div style="float: left; margin-left: 3px; ">
+                    <select id="inpDestino" style="width: 120px;">
+                        <option value="0">Todos</option>
+                    </select>
+                </div>
+            </div>
+            <div style="float: left; margin-top: 8px;" >
+                <div>
+                    Estado:
+                </div>
+                <div style="float: left; margin-left: 3px; ">
+                    <select id="inpEstado" style="width: 120px;">
+                        <option value="0">Todos</option>
+                        <option value="Nuevo">Nuevo</option>
+                        <option value="Cerrado">Cerrado</option>
+                        <option value="Eliminado">Eliminado</option>
+                    </select>
+                </div>
+            </div>
+            <div style="float: left; margin-top: 8px;" >
+                <div>
+                    Cliente:
+                </div>
+                <div style="float: left; margin-left: 3px; ">
+                    <select id="inpClienteMaquila">
+                    </select>
+                </div>
+            </div>
+            <div style="float: left; margin-left: 10px; margin-top: 27px;">
+                <input type="button" class="btn" id="btnConsultar" value="Consultar">
+            </div>
+        </div>
+        <div style="clear: both; padding-top: 10px;">
+            <button class="btn" id="btnNuevo"><i class="icon-plus"></i></button>&nbsp;<button class="btn" id="btnBuscar"><i class="icon-search"></i></button>
+        </div>
+        <div>
+            <table class="table" id="tablaOrdenes">
+                <thead>
+                    <tr>
+                        <th style="text-align: center;">Fecha</th>
+                        <th>Folio</th>
+                        <th>Folio SAP</th>
+                        <th>Descripcion</th>
+                        <th>Destino</th>
+                        <th>Estado</th>
+                        <th>Cliente</th>
+                        <th>Usuario</th>
+                        <th>S. Emb.</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                <tfoot>
+                </tfoot>
+            </table>
+        </div>
+     </div>   
+     <div id="mdlBuscar" style="display: none">
+        <div id="mdlBuscar-body" style="width: 500px; height: 300px; padding-left: 50px !important;">
+            <h3>Buscar Orden de Salida</h3>
+            <div>
+                Orden:
+            </div>
+            <div>
+                <input type="text" id="inpBuscar">
+            </div>
+            <div>
+                <input type="button" id="btnAceptarBusqueda" value="Aceptar" class="btn">&nbsp;<input type="button" id="btnCancelarBusqueda" value="Cancelar" class="btn">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

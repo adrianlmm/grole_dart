@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Uso empaque orden</title>
+    <link href="/uso_empaque_orden/web/styles/bootstrap/css/bootstrap.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <h3>Uso empaque ordenes de producción</h3>
+      <div>
+          Orden de Producción:
+      </div>
+      <div>
+          <input type="text" id="inpOrden" autofocus><button id="btnConsultar">Consultar</button>
+      </div>
+      <div>
+        <div>
+          <a id="aExcel" href="data:application/text,demodmeodmeode" download="uso_empaque_orden.csv">Excel</a>
+        </div>
+        <table class="table" id="tablaUsoEmpaque">
+            <thead>
+                <tr>
+                    <th>Orden</th>
+                    <th>Código</th>
+                    <th>Descripción</th>
+                    <th style="text-align: right;">Cantidad usada</th>
+                    <th style="text-align: right;">Cantidad entregada</th>
+                    <th style="text-align: right;">Diferencia</th>
+                    <th style="text-align: right;">Costos</th>
+                    <th style="text-align: right;">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>
+              <tr>
+                  <th></th>
+                <th></th>
+                <th></th>
+                <th style="text-align: right;"><span id="spanTotalUsoEmpaque"></span></th>
+                <th style="text-align: right;"><span id="spanTotalCantidadEntregada"></span></th>
+                <th style="text-align: right;"><span id="spanTotalDiferencia"></span></th>
+                <th style="text-align: right;"><span id="spanTotalCostos"></span></th>
+                <th style="text-align: right;"><span id="spanTotalGeneral"></span></th>
+              </tr>  
+            </tfoot>
+        </table>
+      </div>
+    </div>
+    <script type="application/dart" src="uso_empaque_orden.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>

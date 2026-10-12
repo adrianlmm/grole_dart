@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sample app</title>
+    <link rel="stylesheet" href="consulta_mpo.css">
+    <style type="text/css">
+        .oculto {
+          display: none;
+        }
+    </style>
+    
+  </head>
+  <body>
+    <h2>Consulta De Materia Prima</h2>
+    <a id="aConsulta" href="" download="consulta_mp.csv" style="display:none;"></a>
+    <div>
+        <div style="float: left;">
+            <div>
+                Fecha Inicial:
+            </div>
+            <div>
+                <input type="text" id="inpFechaInicial" autofocus>
+            </div>
+         </div>
+         <div style="float: left; margin-left: 20px">
+            <div>
+                Fecha Final:
+            </div>
+            <div>
+                <input type="text" id="inpFechaFinal">
+            </div>
+         </div>
+         <div style="float: left; margin-left: 10px;">
+            <div style="margin-top: 16px;">
+                <button on-click="consultar();">Aceptar</button>&nbsp;<button on-click="exporta_consulta();">Exportar</button>
+            </div>
+         </div> 
+    </div>
+    <div style="clear: both; margin-top: 90px;">
+        <div>     
+          <table style="width: 80%">
+              <thead>
+                  <tr>
+                      <th style="text-align: center; width: 8%"><a href="#" on-click="muestraFiltroFecha();">Fecha</a></th>
+                      <th style="text-align: center; width: 5%"><a href="#" on-click="muestraFiltroFolio();">Folio</a></th>
+                      <th style="text-align: left; width: 7%"><a href="#" on-click="muestraFiltroProducto();">Producto</a></th>
+                      <th style="text-align: left; width: 20%">Descripción</th>
+                      <th style="text-align: right; width: 8%">Kilos Req.</th>
+                      <th style="text-align: right; width: 8%">Surtido</th>
+                      <th style="width: 8%">Salida</th>  
+                  </tr>  
+              </thead>
+          </table>    
+        </div>
+        <div style="height: 400px; overflow-y: auto">
+            <table style="width: 80%;" >
+                <tbody template repeat="item in ListaConsultaFitrada">
+                    <tr>
+                        <td style="text-align: center; width: 8%">{{new intl.DateFormat("dd/MM/yyyy").format(item.fecha)}}</td>
+                        <td style="text-align: center; width: 5%">{{item.idOrden}}</td>
+                        <td style="width: 7%;">{{item.producto}}</td>
+                        <td style="width: 20%">{{item.descripcion}}</td>
+                        <td style="text-align: right; width: 8%">{{new intl.NumberFormat("#,##0.00").format(item.kilos)}}</td>
+                        <td style="text-align: right; width: 8%">{{new intl.NumberFormat("#,##0.00").format(item.surtido)}}</td>
+                        <td style="text-align: center; width: 8%">{{item.idSalida}}</td>  
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <table style="width: 80%;" >
+                <tfoot>
+                    <tr>
+                        <th style="text-align: center; width: 8%"></th>
+                        <th style="text-align: center; width: 5%"></th>
+                        <th style="width: 7%;"></th>
+                        <th style="width: 20%"></th>
+                        <th style="text-align: right; width: 8%">{{new intl.NumberFormat("#,##0.00").format(pTotalKilos)}}</th>
+                        <th style="text-align: right; width: 8%">{{new intl.NumberFormat("#,##0.00").format(pTotalSurtido)}}</th>
+                        <th style="text-align: center; width: 8%"></td>  
+                    </tr>
+                </tfoot>
+            </table>
+        </div>      
+    </div>
+    <div id="divFiltroFecha" style="position: fixed; overflow-y: auto; width: 30%; margin-left: 20%; height: 450px; z-index: 999; display: float; background-color: white; top: 100px; left: 10%; border: solid 1px black;" class="oculto">
+        <table>
+            <tbody template repeat="item in ListaFiltroFechas">
+                <tr>
+                    <td><input type="checkbox" bind-checked="item.checked"></td>
+                    <td>{{new intl.DateFormat("dd/MM/yyyy").format(item.fecha)}}</td>
+                </tr>      
+            </tbody>
+        </table>  
+        <div>
+            <button on-click="filtraFecha()">Aceptar</button>&nbsp;<button on-click="muestraFiltroFecha()">Cancelar</button>&nbsp;<button on-click="togleMarcadoFecha()">Marcar/Desmarcar</button>
+        </div>  
+    </div>
+    <div id="divFiltroOrden" style="position: fixed; overflow-y: auto; width: 30%; margin-left: 20%; height: 450px; z-index: 999; display: float; background-color: white; top: 100px; left: 10%; border: solid 1px black;" class="oculto">
+        <table>
+            <tbody template repeat="item in ListaFiltroFolio">
+                <tr>
+                    <td><input type="checkbox" bind-checked="item.checked"></td>
+                    <td>{{item.folio.toString()}}</td>
+                </tr>      
+            </tbody>
+        </table>  
+        <div>
+            <button on-click="filtraFolio()">Aceptar</button>&nbsp;<button on-click="muestraFiltroFolio()">Cancelar</button>&nbsp;<button on-click="togleMarcadoFolio()">Marcar/Desmarcar</button>
+        </div>  
+    </div>
+    <div id="divFiltroProducto" style="position: fixed; overflow-y: auto; width: 30%; margin-left: 20%; height: 450px; z-index: 999; display: float; background-color: white; top: 100px; left: 10%; border: solid 1px black;" class="oculto">
+        <table>
+            <tbody template repeat="item in ListaFiltroProducto">
+                <tr>
+                    <td><input type="checkbox" bind-checked="item.checked"></td>
+                    <td>{{item.producto.toString()}}</td>
+                </tr>      
+            </tbody>
+        </table>  
+        <div>
+            <button on-click="filtraProducto()">Aceptar</button>&nbsp;<button on-click="muestraFiltroProducto()">Cancelar</button>&nbsp;<button on-click="togleMarcadoProducto()">Marcar/Desmarcar</button>
+        </div>  
+    </div> 
+    <script type="application/dart" src="consulta_mpo.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>

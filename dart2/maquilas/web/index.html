@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script defer src="main.dart" type="application/dart"></script>
+    <script defer src="packages/browser/dart.js"></script>
+</head>
+<body>
+<div id="header">
+    <div style="clear:both;">
+        <div style="float:left; margin-left: 5px;">
+            <div>
+                Fecha Inicial
+            </div>
+            <div>
+                <input type='text' id="inpFechaIni" name="FechaIni" value="08/06/2016"/>
+            </div>
+        </div>
+        <div style="float:left; margin-left: 5px;">
+            <div>
+                Fecha Final
+            </div>
+            <div>
+                <input type='text' id="inpFechaFin" name="FechaFin" value="08/06/2016"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="clear: both; margin-top: 50px;">
+    <button id="btnConsultar">Consultar</button>
+</div>
+<div style="margin-top:10px;">
+    <a href="javascript:window.open('http://localhost:8031/editar_maquila/0')" class="label">Nuevo</a>
+</div>
+<div style="margin-top: 30px;">
+    <table class="table" id="tablaConsulta">
+        <thead>
+        <tr>
+            <th style="text-align: left;">Folio</th>
+            <th style="text-align: center;">Fecha</th>
+            <th style="text-align: left;">Cliente</th>
+            <th>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

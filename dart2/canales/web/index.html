@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<!--
+  Copyright (c) 2016, <your name>. All rights reserved. Use of this source code
+  is governed by a BSD-style license that can be found in the LICENSE file.
+-->
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="scaffolded-by" content="https://github.com/google/stagehand">
+    <title>canales</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="main.dart" type="application/dart"></script>
+    <script defer src="packages/browser/dart.js"></script>
+</head>
+
+<body>
+
+  <div>
+
+      <div style="float: left;">
+          <div>
+              <div>Fecha Inicial:</div>
+              <div>
+                  <input type="text" id="inpFechaIni"/>
+             </div>
+          </div>
+      </div>
+      <div style="float: left; margin-left: 30px;">
+          <div>
+              <div>Fecha Final:</div>
+              <div>
+                  <input type="text" id="inpFechaFin"/>
+              </div>
+          </div>
+      </div>
+      <div style="float: left; margin-left: 30px;">
+          <div>
+              <div>Granja:</div>
+              <div>
+                  <select id="inpGranja">
+
+                  </select>
+              </div>
+          </div>
+      </div>
+      <div style="float: left; margin-left: 5px;">
+          <div style="margin-top: 20px;">
+            <button id="btnConsultar">Consultar</button>
+          </div>
+      </div>
+      <div style="clear: both;">
+          <table id="tablaConsulta" style="width: 90%;">
+              <thead>
+                    <tr>
+                        <th style="text-align: center">Fecha</th>
+                        <th style="text-align: center">Lote</th>
+                        <th style="text-align: right">Canales</th>
+                        <th style="text-align: right">Peso</th>
+                        <th style="text-align: right">Bajas</th>
+                        <th style="text-align: right">Peso Bajas</th>
+                    </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+          </table>
+      </div>
+  </div>
+
+</body>
+</html>

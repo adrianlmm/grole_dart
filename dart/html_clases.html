@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Clase</title>
+    <link rel='stylesheet' href="clases.css">
+  </head>
+  <body>
+    <h1>Clase</h1>
+    <div id='sample_container_id'>
+      <div>
+        <div><input type="button" value="Modificar" id="btnPermiteEdicion" on-click="modificar()">
+      </div>
+      <table class="table"  style="border-collapse:separate; border-spacing:15px;">
+        <thead>
+          <tr>
+            <th>CLAVE</th>
+            <th>DESCRIPCION</th>
+            <th>MANEJAEXTRA</th>
+            <th>TIPO</th>
+            <th>ACTIVO</th>
+            <th template instantiate="if modo_insercion"></th>
+          </tr>
+          <tr template instantiate="if permite_edicion">
+              <th style="display:none;"><input type="text" id="clave" value="0" disabled="disabled"></th>
+              <th><input type="text" id="descripcion" value="" autofocus required></th>
+              <th>
+                  <select id="manejaextra" >
+                      <option value="Si">Si</option>
+                      <option value="No">No</option>
+                  </select>
+              </th>
+              <th>
+                  <select id="tipo" >
+                      <option value="Pieza">Pieza</option>
+                      <option value="Otro">Otro</option>
+                  </select>
+              </th>
+              <th>
+                  <select id="activo" >
+                      <option value="1">Si</option>
+                      <option value="0">No</option>
+                  </select>
+              </th>
+              <th template instantiate="if permite_edicion"><input type="button" id="btnAgregar" value="Agregar" on-click="agregar()"><template instantiate="if !modo_insercion"><input type="button" id="btnCancelar" value="Cancelar" on-click="cancelar()"></template></th>
+            </tr>
+          </thead>
+          <tbody template iterate="item in lista_clase">
+            <tr template instantiate="if modo_insercion">
+              <td style="display:none;">{{item.clave}}</td>
+              <td>{{item.descripcion}}</td>
+              <td>{{item.manejaextra}}</td>
+              <td>{{item.tipo}}</td>
+              <td><span template instantiate="if item.activo == 1">Si</span><span template instantiate="if item.activo == 0">No</span></td>
+              <td template instantiate="if modo_insercion && permite_edicion"><input type="button" id="btnEliminar" value="Eliminar" on-click="eliminar(item)"><input type="button" id="btnEditar" value="Editar" on-click="editar(item)"></td>
+            </tr>
+          </tbody>
+          <tfoot>
+          </tfoot>    
+      </table>
+    </div>
+
+    <script type="application/dart" src="clases.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<!--
+  Copyright (c) 2016, <your name>. All rights reserved. Use of this source code
+  is governed by a BSD-style license that can be found in the LICENSE file.
+-->
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="scaffolded-by" content="https://github.com/google/stagehand">
+    <title>lista_orden_p</title>
+    <link href="/styles/site.css" rel="stylesheet" type="text/css" />
+    <link href="/styles/custom-theme/jquery-ui-1.8.19.custom.css" rel="stylesheet" type="text/css" />
+    <link href="/styles/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <script defer src="lista_orden_p.dart" type="application/dart"></script>
+    <script defer src="packages/browser/dart.js"></script>
+
+    <style type="text/css">
+
+        .hiden{
+            display:none;
+        }
+
+        .body{
+            background-color: #5c87b2;
+        }
+
+        .label_{
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+
+<body class="body">
+<input type="hidden" id="inpEditable" value="true">
+<input type="hidden" id="idUsuario" value="1">
+<input type="hidden" id="inpResponsableDe" value="Dannia">
+<input type="hidden" id="inpPuedeAutorizar" value="true">
+<div class="page">
+    <div id="header">
+        <div id="title">
+            <h1>Control de Rastro Grole</h1>
+        </div>
+        <br/>
+        <div id="logindisplay">
+            Bienvenido(a) <strong>sistemas</strong>! [ <a href="/menu">Menu</a> ] [ <a href="/logoff">Salir</a> ]
+        </div>
+        <div id="menucontainer">
+            <ul id="menu">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/Home/About">Acerca de</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="main">
+        <div class="container" style="width: 100%;">
+            <h2>Ordenes de producción</h2>
+            <div class="row">
+                <div style="float: left; margin-top: 5px; margin-right: 10px; font-weight: bold;">Filtro:</div>
+                <select id="filtro" style="float: left;">
+                    <option value="Todos">Todos</option>
+                    <option value="Nuevo">Nuevo</option>
+                    <option value="Surtido">Surtido</option>
+                    <option value="Cerrado">Cerrado</option>
+                    <option value="Generado">Generado</option>
+                    <option value="Finalizado">Finalizado</option>
+                    <option value="Autorizado">Autorizado</option>
+                </select>
+                <div style="float: left; margin-top: 5px; margin-right: 10px; margin-left: 10px; font-weight: bold;">Clase:</div>
+                <select id="inpClase" class="input-small" style="float: left;">
+                </select>
+                <div style="float: left; margin-top: 5px; margin-right: 10px; margin-left: 10px; font-weight: bold;">Cliente:</div>
+                <select id="inpClienteMaquila" class="input-small" style="float: left;">
+                </select>
+                <div style="float: left; margin-top: 5px; margin-right: 10px; margin-left: 10px; font-weight: bold;">Procesado:</div>
+                <select id="inpProcesado" class="input-small" style="float: left;">
+                    <option value="Todos">Todos</option>
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
+                </select>
+                <div style="float: left; margin-top: 5px; margin-right: 10px; margin-left: 10px; font-weight: bold; margin-left: 10px">Fecha inicial:</div>
+                <input class="span2"  type="text" id="fecha" style="height: 20px; float: left;">
+                <div style="float: left; margin-top: 5px; margin-right: 10px; font-weight: bold; margin-left: 10px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fecha final:</div>
+                <div class="input-append">
+                    <input class="span2"  type="text" id="fechafin" style="height: 20px; float: left;">
+                    <button class="btn" type="button" id="btnConsultar"><i class="icon-play"></i></button>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 20px;">
+                <button id="btnAgregar" class="btn" style="margin-bottom: 10px;"><i class="icon-plus"></i></button>&nbsp;&nbsp;<button id="btnBusca" class="btn" style="margin-bottom: 10px;"><i class="icon-search"></i></button>
+                <table id="tablaConsulta" class="table">
+                    <thead>
+                    <tr>
+                        <th>Folio</th>
+                        <th>Folio SAP</th>
+                        <th>Cliente</th>
+                        <th style="width: 20%;">Descripción</th>
+                        <th style="text-align: center">Fecha Creación</th>
+                        <th style="text-align: center">Fecha Produccion</th>
+                        <th style="text-align: center">Usuario</th>
+                        <th style="text-align: center">Clase</th>
+                        <th style="text-align: center">Responsable</th>
+                        <th style="text-align: center">Estado</th>
+                        <th style="text-align: center">Fec. Mod.</th>
+                        <th style="text-align: center">Procesado</th>
+                        <th style="text-align: center">Mot. Modifi</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="mdlBuscar" style="display:none;">
+    <div id="mdlBuscar-body"  style="width: 400px; height: 250px;">
+        <div class="mdlBuscar-header">
+            <button type="button" id="btnCerrarModalBuscar1" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Buscar Orden</h3>
+        </div>
+        <div class="modal-body">
+
+            <div>
+                Folio:
+            </div>
+            <div class="controls">
+                <input type="text" id="pFolio" autofocus>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <button id="btnCerrarModalBuscar2" class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+            <button class="btn btn-primary" id="btnBuscar">Buscar</button>
+        </div>
+    </div>
+</div>
+<div id="mdlCambiarEstado"  style="display:none;">
+    <div id="mdlCambiarEstado-body" style="width: 400px; height: 200px;">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="btnCerrarModalCambiarEstado">×</button>
+            <h3 id="myModalLabel_">Cambiar Estado</h3>
+        </div>
+        <div class="modal-body">
+
+            <select id="inpEstado">
+                <option id="Nuevo">Nuevo</option>
+                <option id="Surtido">Surtido</option>
+                <option id="Cerrado">Cerrado</option>
+            </select>
+
+        </div>
+        <div class="modal-footer">
+            <button class="btn" id="btnCancelarCambioEstado" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+            <button class="btn btn-primary" id="btnCambiarEstado">Aceptar</button>
+        </div>
+    </div>
+</div>
+<div id="mdlAutorizar" style="display:none;">
+    <div id="mdlAutorizar-body"  style="width: 400px; height: 250px;">
+        <div class="mdlBuscar-header">
+            <button type="button" id="btnCerrarModalAutorizar1" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="my_ModalLabel">Autorizar</h3>
+        </div>
+        <div class="modal-body">
+
+            <div>
+                Contraseña:
+            </div>
+            <div class="controls">
+                <input type="password" id="inpPassword" autofocus/>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <button id="btnCerrarModalAutorizar2" class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+            <button class="btn btn-primary" id="btnAutorizar">Autorizar</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

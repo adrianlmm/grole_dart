@@ -1,0 +1,4 @@
+name: mto_estimacion_empaque
+description: A sample web application
+dependencies:
+  browser: any

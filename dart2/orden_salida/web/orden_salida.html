@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Orden salida</title>
+    <link href="http://192.168.0.11/webfrontend/Content/dart/bootstrap.min.css" rel="stylesheet">
+    <link href="http://192.168.0.11/webfrontend/Content/dart/bootstrap.min.css" rel="stylesheet">
+    <link href="http://192.168.0.11/webfrontend/Content/dart/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="http://192.168.0.11/webfrontend/Content/dart/font-awesome.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <input type="hidden" id="inpFolio" value="0">
+    <input type="hidden" id="inpIdUsuario" value="1">
+    <input type="hidden" id="inpClaveCliente" value="1">
+    <div class="container">
+        <h2>Orden de salida, Folio:<span id="spanFolio">13003</span>, Estado: <span id="spanEstado">Nuevo</span>, <span id="spanCumplimiento"></span></h2>
+        <div style="position: relative;">
+            <div style="float: left">
+                <div>
+                    Destino:
+                </div>
+                <div>
+                    <input type="text" id="inpDestino" autofocus></input>
+                </div>
+            </div>
+            <div style="float: left; margin-left: 20px;">
+                <div>
+                    Descripción:
+                </div>
+                <div>
+                    <input type="text" id="inpDescripcion"></input>
+                </div>
+            </div>
+            <div style="float: left; margin-left: 20px;">
+                <div>
+                    Fecha Embarque:
+                </div>
+                <div>
+                    <input type="text" id="inpFechaEmbarque"></input>
+                </div>
+            </div>
+            <div style="float: left; margin-left: 20px;">
+                <div>
+                    Valida Productos:
+                </div>
+                <div>
+                    <select id="inpValidaProductos" style="width: 100px;">
+                        <option value="Si">Si</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+            </div>
+            <div style="float: left; margin-left: 20px;">
+                <div>
+                    Días de Producción:
+                </div>
+                <div>
+                    <select id="inpDiasProduccion" style="width: 55px;">
+                        <option value="0">0</option>
+                        <option value="5">5</option>
+                        <option value="7">7</option>
+                        <option value="10">10</option>
+                        <option value="12">12</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="25">25</option>
+                        <option value="30">30</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div style="clear:both;">
+          <div style="float: left">
+              <div>
+                  Tipo:
+              </div>
+              <div>
+                <select id="inpTipo">
+                    <option value="Nacional">Nacional</option>
+                    <option value="Exportacion">Exportación</option>
+                </select>
+              </div>
+          </div>
+          <div style="float: left; margin-left: 20px;">
+              <div>
+                  Peso camión:
+              </div>
+              <div>
+                <input type="number" id=inpPesoCamion style="width: 100px;">
+              </div>
+          </div>
+          <div style="float: left; margin-left: 20px;">
+              <div>
+                  Tarima Chep:
+              </div>
+              <div>
+                <input type="number" id=inpTarima1 style="width: 100px;">
+              </div>
+          </div>
+          <div style="float: left; margin-left: 20px;">
+              <div>
+                  Tarima Tradional:
+              </div>
+              <div>
+                  <input type="number" id=inpTarima2 style="width: 100px;">
+              </div>
+          </div>
+            <div style="float: left; margin-left: 20px;">
+                <div>
+                    Cliente:
+                </div>
+                <div>
+                    <select id="inpClienteMaquila">
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div style="clear: both; padding-top: 20px;">
+            <div>
+                Clase:
+            </div>
+            <div>
+                <select id="inpClaseSalida">
+                </select>
+            </div>
+        </div>
+        <div style="clear: both; padding-top: 20px;">
+            <div>
+                <button class="btn" id="btnAgregar"><i class="icon-plus"></i></button>&nbsp;<button class="btn" id="btnAgregarTarimas"><i class="icon-list"></i></button>
+            </div>
+            <table id="tablaDetalle" class="table">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Descripción</th>
+                        <th style="text-align: right;">Cajas</th>
+                        <th style="text-align: right;">Kilos</th>
+                        <th style="text-align: right;">Cajas Surtidas</th>
+                        <th style="text-align: right;">Kilos Surtidos</th>
+                        <th style="text-align: right;">Dias Prod.</th>
+                        <th style="text-align: right;">Cumplimiento</th>
+                        <th style="text-align: right;">Tara</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                <tfoot>
+                  <tr>
+                        <th></th>
+                        <th></th>
+                        <th style="text-align: right;"><span id="spanTotalCajas"></span></th>
+                        <th style="text-align: right;"><span id="spanTotalKilos"></span></th>
+                        <th style="text-align: right;"><span id="spanTotalCajasSurtidas"></span></th>
+                        <th style="text-align: right;"><span id="spanTotalKilosSurtidos"></span></th>
+                        <th style="text-align: right;"></th>
+                        <th></th>
+                        <th style="text-align: right;"><span id="spanTotalTara"></span></th>
+                        <th></th>                        
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div>
+            <div>
+                <button class="btn" id="btnGuardar">Guardar</button>&nbsp;<button class="btn" style="display: none;" id="btnCerrar">Cerrar orden</button>&nbsp;<button class="btn" id="btnCancelar">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="mdlAgregar" style="display: none;">
+        <div id="mdlAgregar-body" style="width: 500px; height: 500px; padding-left: 15px !Important;">
+            <h3>Agregar producto</h3>
+            <div>
+                Producto:
+            </div>
+            <div>
+                <input type="text" id="inpProducto">
+            </div>
+            <div>
+                Descripción:
+            </div>
+            <div>
+                <input type="text" id="inpDescripcionProducto" readonly>
+            </div>
+            <div>
+                Cajas:
+            </div>
+            <div>
+                <input type="text" id="inpCajas">
+            </div>
+            <div>
+                Kilos:
+            </div>
+            <div>
+                <input type="text" id="inpKilos">
+            </div>
+            <div>
+                Restringir Días de Producción:
+            </div>
+            <div>
+                <input type="text" id="inpDiasProduccionLinea" value="0"/>
+            </div>
+            <div>
+                <input type="button" value="Agregar" id="btnAgregarProducto" class="btn">&nbsp;<input type="button" value="Cancelar" id="btnCancelarCaptura" class="btn">
+            </div>
+        </div>
+    </div>
+
+    <div id="mdlEditar" style="display: none;">
+        <div id="mdlEditar-body" style="width: 500px; height: 500px; padding-left: 15px !Important;">
+            <h3>Editar producto</h3>
+            <div>
+                Producto:
+            </div>
+            <div>
+                <input type="text" id="inpProductoEdicion" readonly>
+            </div>
+            <div>
+                Descripción:
+            </div>
+            <div>
+                <input type="text" id="inpDescripcionProductoEdicion" readonly>
+            </div>
+            <div>
+                Cajas:
+            </div>
+            <div>
+                <input type="text" id="inpCajasEdicion">
+            </div>
+            <div>
+                Kilos:
+            </div>
+            <div>
+                <input type="text" id="inpKilosEdicion">
+            </div>
+            <div>
+                Restringir Días de Producción:
+            </div>
+            <div>
+                <input type="text" id="inpDiasProduccionEdicion"/>
+            </div>
+            <div>
+            <div>
+                <input type="button" value="Editar" id="btnEditarProducto" class="btn">&nbsp;<input type="button" value="Cancelar" id="btnCancelarEdicion" class="btn">
+            </div>
+        </div>
+    </div>
+
+    <div id="mdlConsultaTarimas" style="display: none;">
+        <div id="mdlConsultaTarimas-body" style="width: 900px; height: 500px; padding-left: 15px !Important;">
+            <div style="float: left;">
+                <div>Producto:</div>
+                <div><input type="text" id="inpClavePtoTarima" class="input-small"></div>
+            </div>
+            <div style="float: left; margin-left: 10px;">
+                <div>Nombre:</div>
+                <div><input type="text" id="inpNombrePtoTarima" readonly></div>
+            </div>
+            <div style="float: left; margin-left: 10px;">
+                <div>Cámara:</div>
+                <div>
+                    <select id="inpCamaras">
+
+                    </select>&nbsp;<input type="button" value="Consultar" id="btnCosultarTarimas">&nbsp;<input type="button" value="Cerrar" id="btnCancelarCosultarTarimas">
+                </div>
+            </div>
+            <table class="table" style="clear: both;" id="tablaConsultaTarimas">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Folio</th>
+                        <th>Producto</th>
+                        <th>Cajas</th>
+                        <th>Kilos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script type="application/dart" src="orden_salida.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>

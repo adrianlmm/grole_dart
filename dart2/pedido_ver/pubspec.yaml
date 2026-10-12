@@ -1,0 +1,7 @@
+name: pedido_ver
+description: A sample web application
+dependencies:
+  browser: any
+  intl: any
+  modal:
+    path: c:\tmp\dart\modal

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mto estimacion empaque</title>
+    <link href="/mto_estimacion_empaque/web/styles/bootstrap/css/bootstrap.css" rel="stylesheet">
+  </head>
+  <body>
+    <input type="hidden" id="inpFolio" value="10">
+    <div class="container">
+      <h3>Estimación de empaque</h3>
+      <div>
+        <div style="float: left;">
+            Descripción:
+        </div>
+        <div style="float: left;">
+            <input type="text" id="inpDescripcion" autofocus>
+        </div>
+      </div>
+      <table id="tableData" class="table" style="clear: both;">
+          <thead>
+              <tr>
+                  <th><input class="input-small" type="text" id="inpClaveProducto" value=""></th>
+                  <th><input type="text" readonly id="inpDescripcionProducto" value=""></th>
+                  <th><input type="text" id="inpCantidad" value="1"></th>
+                  <th><button id="btnAgregar"><i class="icon-plus"></i></button></th>
+              </tr>
+          </thead>
+          <tbody> 
+          </tbody>
+      </table>
+      <div>
+          <button id="btnGuardar">Guardar</button>&nbsp;<button id="btnCancelar">Cancelar</button>
+      </div>
+    </div>
+    
+    <script type="application/dart" src="mto_estimacion_empaque.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>

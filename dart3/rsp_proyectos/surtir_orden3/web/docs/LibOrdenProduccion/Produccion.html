@@ -1,0 +1,332 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>Produccion class / LibOrdenProduccion Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="LibOrdenProduccion" data-type="Produccion">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../LibOrdenProduccion.html">LibOrdenProduccion</a> &rsaquo; <a href="../LibOrdenProduccion/Produccion.html">Produccion</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+<h2><div class="icon-library"></div><a href="../date_format_internal.html">date_format_internal</a></h2><h2><div class="icon-library"></div><a href="../date_symbols.html">date_symbols</a></h2><h2><div class="icon-library"></div><a href="../DetalleMP.html">DetalleMP</a></h2><h2><div class="icon-library"></div><a href="../intl.html">intl</a></h2><h2><div class="icon-library"></div><a href="../intl_helpers.html">intl_helpers</a></h2><h2><div class="icon-library"></div><a href="../LibOrdenProduccion.html">LibOrdenProduccion</a></h2><ul class="icon">
+<li><a href="../LibOrdenProduccion/OrdenProduccion.html"><div class="icon-class"></div>OrdenProduccion</a></li>
+<li><div class="icon-class"></div><strong>Produccion</strong></li>
+</ul>
+<h2><div class="icon-library"></div><a href="../meta.html">meta</a></h2><h2><div class="icon-library"></div><a href="../metadata.html">metadata</a></h2><h2><div class="icon-library"></div><a href="../ModalP.html">ModalP</a></h2><h2><div class="icon-library"></div><a href="../number_symbols.html">number_symbols</a></h2><h2><div class="icon-library"></div><a href="../number_symbol_data.html">number_symbol_data</a></h2><h2><div class="icon-library"></div><a href="../OrdenPP.html">OrdenPP</a></h2><h2><div class="icon-library"></div><a href="../SalidaInventario.html">SalidaInventario</a></h2><h2><div class="icon-library"></div><a href="../surtir_orden.dart.html">surtir_orden.dart</a></h2></div>
+<div class="content">
+        <h2><strong>Produccion</strong>
+          class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<pre class="source">
+class Produccion{
+   int    id;
+   int factura;
+   String clave_producto;
+   String codigosap;
+   String nombre_producto;
+   double programado;
+   double producido;
+   double porcentaje;
+   int    cajas;
+   double costo_maquila;
+   double valor_rescate;
+   double importe_maquila;
+   double importe_rescate;
+   double costo_salida;
+   
+   Produccion();
+   
+   Produccion.fromMap(Map AMapa){
+     
+       try{
+           this.factura = AMapa["id_factura"];
+       }
+       catch(ex){
+           this.factura = 0;
+       }
+       
+       this.id              = AMapa["id"];
+       this.clave_producto  = AMapa["producto"];
+       this.codigosap       = AMapa["codigosap"];
+       this.nombre_producto = AMapa["descripcion"];
+       this.programado      = AMapa["programado"].toDouble();
+       this.producido       = AMapa["producido"].toDouble();
+       this.porcentaje      = 0.0;//p_lista['porcentaje'];
+       this.cajas           = AMapa['cajas'];
+       this.costo_maquila   = AMapa['costo_maquila'].toDouble();
+       
+       this.importe_maquila = AMapa['importe_maquila'].toDouble();
+       
+       try{
+         this.valor_rescate   = AMapa['valor_rescate'].toDouble();
+       }
+       catch(ex){
+         this.valor_rescate = 0.0;
+       }
+       
+       this.importe_maquila = this.producido * this.costo_maquila;
+       this.importe_rescate = this.producido * this.valor_rescate;
+       this.costo_salida    = 0.0;
+   }
+}
+</pre>
+</div>
+<div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="">
+<button class="show-code">Code</button>
+new <strong>Produccion</strong>() <a class="anchor-link" href="#"
+              title="Permalink to Produccion.Produccion">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Creates a new <a class="crossref" href="../dart_core/Object.html">Object</a> instance.</p>
+<p><a class="crossref" href="../dart_core/Object.html">Object</a> instances have no meaningful state, and are only useful
+through their identity. An <a class="crossref" href="../dart_core/Object.html">Object</a> instance is equal to itself
+only.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+Produccion();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="fromMap">
+<button class="show-code">Code</button>
+new <strong>Produccion.fromMap</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a> AMapa) <a class="anchor-link" href="#fromMap"
+              title="Permalink to Produccion.Produccion.fromMap">#</a></h4>
+<div class="doc">
+<pre class="source">
+Produccion.fromMap(Map AMapa){
+ 
+   try{
+       this.factura = AMapa["id_factura"];
+   }
+   catch(ex){
+       this.factura = 0;
+   }
+   
+   this.id              = AMapa["id"];
+   this.clave_producto  = AMapa["producto"];
+   this.codigosap       = AMapa["codigosap"];
+   this.nombre_producto = AMapa["descripcion"];
+   this.programado      = AMapa["programado"].toDouble();
+   this.producido       = AMapa["producido"].toDouble();
+   this.porcentaje      = 0.0;//p_lista['porcentaje'];
+   this.cajas           = AMapa['cajas'];
+   this.costo_maquila   = AMapa['costo_maquila'].toDouble();
+   
+   this.importe_maquila = AMapa['importe_maquila'].toDouble();
+   
+   try{
+     this.valor_rescate   = AMapa['valor_rescate'].toDouble();
+   }
+   catch(ex){
+     this.valor_rescate = 0.0;
+   }
+   
+   this.importe_maquila = this.producido * this.costo_maquila;
+   this.importe_rescate = this.producido * this.valor_rescate;
+   this.costo_salida    = 0.0;
+}
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field"><h4 id="cajas">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>cajas</strong> <a class="anchor-link"
+            href="#cajas"
+            title="Permalink to Produccion.cajas">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+int    cajas
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="clave_producto">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>clave_producto</strong> <a class="anchor-link"
+            href="#clave_producto"
+            title="Permalink to Produccion.clave_producto">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+String clave_producto
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="codigosap">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>codigosap</strong> <a class="anchor-link"
+            href="#codigosap"
+            title="Permalink to Produccion.codigosap">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+String codigosap
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="costo_maquila">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/double.html">double</a>         <strong>costo_maquila</strong> <a class="anchor-link"
+            href="#costo_maquila"
+            title="Permalink to Produccion.costo_maquila">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+double costo_maquila
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="costo_salida">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/double.html">double</a>         <strong>costo_salida</strong> <a class="anchor-link"
+            href="#costo_salida"
+            title="Permalink to Produccion.costo_salida">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+double costo_salida
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="factura">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>factura</strong> <a class="anchor-link"
+            href="#factura"
+            title="Permalink to Produccion.factura">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+int factura
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to Produccion.id">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+int    id
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="importe_maquila">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/double.html">double</a>         <strong>importe_maquila</strong> <a class="anchor-link"
+            href="#importe_maquila"
+            title="Permalink to Produccion.importe_maquila">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+double importe_maquila
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="importe_rescate">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/double.html">double</a>         <strong>importe_rescate</strong> <a class="anchor-link"
+            href="#importe_rescate"
+            title="Permalink to Produccion.importe_rescate">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+double importe_rescate
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="nombre_producto">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>nombre_producto</strong> <a class="anchor-link"
+            href="#nombre_producto"
+            title="Permalink to Produccion.nombre_producto">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+String nombre_producto
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="porcentaje">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/double.html">double</a>         <strong>porcentaje</strong> <a class="anchor-link"
+            href="#porcentaje"
+            title="Permalink to Produccion.porcentaje">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+double porcentaje
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="producido">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/double.html">double</a>         <strong>producido</strong> <a class="anchor-link"
+            href="#producido"
+            title="Permalink to Produccion.producido">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+double producido
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="programado">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/double.html">double</a>         <strong>programado</strong> <a class="anchor-link"
+            href="#programado"
+            title="Permalink to Produccion.programado">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+double programado
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="valor_rescate">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/double.html">double</a>         <strong>valor_rescate</strong> <a class="anchor-link"
+            href="#valor_rescate"
+            title="Permalink to Produccion.valor_rescate">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+double valor_rescate
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        <div class="footer">
+          <div>This page was generated at 2014-01-16 10:01:29.526</div>
+        </div>
+        <script async src="../client-static.js"></script>
+        </body></html>
+        

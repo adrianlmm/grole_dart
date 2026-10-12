@@ -1,0 +1,7 @@
+name: surtir_orden
+description: A sample WebUI application
+dependencies:
+  browser: any
+  intl: 0.13.1
+  js: any
+  quickdialogs: any

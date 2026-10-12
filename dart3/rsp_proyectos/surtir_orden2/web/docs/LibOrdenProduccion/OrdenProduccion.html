@@ -1,0 +1,410 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>OrdenProduccion class / LibOrdenProduccion Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="LibOrdenProduccion" data-type="OrdenProduccion">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../LibOrdenProduccion.html">LibOrdenProduccion</a> &rsaquo; <a href="../LibOrdenProduccion/OrdenProduccion.html">OrdenProduccion</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+<h2><div class="icon-library"></div><a href="../date_format_internal.html">date_format_internal</a></h2><h2><div class="icon-library"></div><a href="../date_symbols.html">date_symbols</a></h2><h2><div class="icon-library"></div><a href="../DetalleMP.html">DetalleMP</a></h2><h2><div class="icon-library"></div><a href="../intl.html">intl</a></h2><h2><div class="icon-library"></div><a href="../intl_helpers.html">intl_helpers</a></h2><h2><div class="icon-library"></div><a href="../LibOrdenProduccion.html">LibOrdenProduccion</a></h2><ul class="icon">
+<li><div class="icon-class"></div><strong>OrdenProduccion</strong></li>
+<li><a href="../LibOrdenProduccion/Produccion.html"><div class="icon-class"></div>Produccion</a></li>
+</ul>
+<h2><div class="icon-library"></div><a href="../meta.html">meta</a></h2><h2><div class="icon-library"></div><a href="../metadata.html">metadata</a></h2><h2><div class="icon-library"></div><a href="../ModalP.html">ModalP</a></h2><h2><div class="icon-library"></div><a href="../number_symbols.html">number_symbols</a></h2><h2><div class="icon-library"></div><a href="../number_symbol_data.html">number_symbol_data</a></h2><h2><div class="icon-library"></div><a href="../OrdenPP.html">OrdenPP</a></h2><h2><div class="icon-library"></div><a href="../SalidaInventario.html">SalidaInventario</a></h2><h2><div class="icon-library"></div><a href="../surtir_orden.dart.html">surtir_orden.dart</a></h2></div>
+<div class="content">
+        <h2><strong>OrdenProduccion</strong>
+          class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<pre class="source">
+class OrdenProduccion{
+ int id;
+ String fecha;
+ int id_usuario;
+ int id_usuario_embarques;
+ int id_tipo;
+ int id_programacion;
+ String id_salida;
+ String descripcion;
+ double kilos_produccion;
+ double rendimiento;
+ String estado;
+ String lote_produccion;
+ double costo_maquila;
+ double valor_rescate;
+ double costo_salida;
+ 
+ String ToJson(){
+   Map p_map = new Map();
+
+   p_map['id']                   = this.id;
+   p_map['fecha']                = this.fecha;
+   p_map['id_usuario']           = this.id_usuario;
+   p_map['id_usuario_embarques'] = this.id_usuario_embarques;
+   p_map['id_tipo']              = this.id_tipo;
+   p_map['descripcion']          = this.descripcion;
+   p_map['kilos_produccion']     = this.kilos_produccion;
+   p_map['rendimiento']          = this.rendimiento;
+   p_map['estado']               = this.estado;
+   p_map['lote_produccion']      = this.lote_produccion;
+   p_map['porcentaje']           = this.porcentaje;
+   p_map['cajas']                = this.cajas;
+   p_map['costo_maquila']        = this.costo_maquila.toDouble();
+   p_map['costo_maquila']        = this.valor_rescate.toDouble();
+   p_map['costo_salida']         = this.costo_salida.toDouble();
+   
+   return JSON.encode(p_map);
+ }
+
+ OrdenProduccion();
+ 
+ OrdenProduccion.FromJSON(String AJSON){
+   
+   var p_lista = JSON.decode(AJSON);
+   
+   this.id = p_lista['id'];
+   
+   String pFecha = p_lista['fecha'];
+   pFecha = pFecha.substring(0, 10);
+   
+   DateFormat pDateFormat = new DateFormat("dd/MM/yyyy");
+   
+   pFecha = pDateFormat.format(DateTime.parse(pFecha));
+   
+   this.fecha                = pFecha;
+   this.id_usuario           = p_lista['id_usuario'];
+   this.id_usuario_embarques = p_lista['id_usuario_embarques'];
+   this.id_tipo              = p_lista['id_tipo'];
+   this.id_programacion      = p_lista['id_programacion'];
+   this.descripcion          = p_lista['descripcion'];
+   this.kilos_produccion     = p_lista['kilos_producccion'];
+   this.rendimiento          = p_lista['rendimiento'];
+   this.estado               = p_lista['estado'];
+   this.lote_produccion      = p_lista['lote_produccion'].toString();
+   this.id_salida            = p_lista['id_salida_embarques'].toString();
+   this.costo_maquila        = p_lista['costo_maquila'].toDouble();
+   
+   try{
+     this.valor_rescate        = p_lista['valor_rescate'].toDouble();  
+   }
+   catch(ex){
+     this.valor_rescate = 0.0;
+   }
+   
+   this.costo_salida         = p_lista['costo_salida'].toDouble();
+   
+  
+ }
+}
+</pre>
+</div>
+<div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="">
+<button class="show-code">Code</button>
+new <strong>OrdenProduccion</strong>() <a class="anchor-link" href="#"
+              title="Permalink to OrdenProduccion.OrdenProduccion">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Creates a new <a class="crossref" href="../dart_core/Object.html">Object</a> instance.</p>
+<p><a class="crossref" href="../dart_core/Object.html">Object</a> instances have no meaningful state, and are only useful
+through their identity. An <a class="crossref" href="../dart_core/Object.html">Object</a> instance is equal to itself
+only.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+OrdenProduccion();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="FromJSON">
+<button class="show-code">Code</button>
+new <strong>OrdenProduccion.FromJSON</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> AJSON) <a class="anchor-link" href="#FromJSON"
+              title="Permalink to OrdenProduccion.OrdenProduccion.FromJSON">#</a></h4>
+<div class="doc">
+<pre class="source">
+OrdenProduccion.FromJSON(String AJSON){
+ 
+ var p_lista = JSON.decode(AJSON);
+ 
+ this.id = p_lista['id'];
+ 
+ String pFecha = p_lista['fecha'];
+ pFecha = pFecha.substring(0, 10);
+ 
+ DateFormat pDateFormat = new DateFormat("dd/MM/yyyy");
+ 
+ pFecha = pDateFormat.format(DateTime.parse(pFecha));
+ 
+ this.fecha                = pFecha;
+ this.id_usuario           = p_lista['id_usuario'];
+ this.id_usuario_embarques = p_lista['id_usuario_embarques'];
+ this.id_tipo              = p_lista['id_tipo'];
+ this.id_programacion      = p_lista['id_programacion'];
+ this.descripcion          = p_lista['descripcion'];
+ this.kilos_produccion     = p_lista['kilos_producccion'];
+ this.rendimiento          = p_lista['rendimiento'];
+ this.estado               = p_lista['estado'];
+ this.lote_produccion      = p_lista['lote_produccion'].toString();
+ this.id_salida            = p_lista['id_salida_embarques'].toString();
+ this.costo_maquila        = p_lista['costo_maquila'].toDouble();
+ 
+ try{
+   this.valor_rescate        = p_lista['valor_rescate'].toDouble();  
+ }
+ catch(ex){
+   this.valor_rescate = 0.0;
+ }
+ 
+ this.costo_salida         = p_lista['costo_salida'].toDouble();
+ 
+
+}
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field"><h4 id="costo_maquila">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/double.html">double</a>         <strong>costo_maquila</strong> <a class="anchor-link"
+            href="#costo_maquila"
+            title="Permalink to OrdenProduccion.costo_maquila">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+double costo_maquila
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="costo_salida">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/double.html">double</a>         <strong>costo_salida</strong> <a class="anchor-link"
+            href="#costo_salida"
+            title="Permalink to OrdenProduccion.costo_salida">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+double costo_salida
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="descripcion">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>descripcion</strong> <a class="anchor-link"
+            href="#descripcion"
+            title="Permalink to OrdenProduccion.descripcion">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+String descripcion
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="estado">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>estado</strong> <a class="anchor-link"
+            href="#estado"
+            title="Permalink to OrdenProduccion.estado">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+String estado
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="fecha">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>fecha</strong> <a class="anchor-link"
+            href="#fecha"
+            title="Permalink to OrdenProduccion.fecha">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+String fecha
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to OrdenProduccion.id">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+int id
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id_programacion">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>id_programacion</strong> <a class="anchor-link"
+            href="#id_programacion"
+            title="Permalink to OrdenProduccion.id_programacion">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+int id_programacion
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id_salida">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>id_salida</strong> <a class="anchor-link"
+            href="#id_salida"
+            title="Permalink to OrdenProduccion.id_salida">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+String id_salida
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id_tipo">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>id_tipo</strong> <a class="anchor-link"
+            href="#id_tipo"
+            title="Permalink to OrdenProduccion.id_tipo">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+int id_tipo
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id_usuario">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>id_usuario</strong> <a class="anchor-link"
+            href="#id_usuario"
+            title="Permalink to OrdenProduccion.id_usuario">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+int id_usuario
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id_usuario_embarques">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>id_usuario_embarques</strong> <a class="anchor-link"
+            href="#id_usuario_embarques"
+            title="Permalink to OrdenProduccion.id_usuario_embarques">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+int id_usuario_embarques
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kilos_produccion">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/double.html">double</a>         <strong>kilos_produccion</strong> <a class="anchor-link"
+            href="#kilos_produccion"
+            title="Permalink to OrdenProduccion.kilos_produccion">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+double kilos_produccion
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="lote_produccion">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>lote_produccion</strong> <a class="anchor-link"
+            href="#lote_produccion"
+            title="Permalink to OrdenProduccion.lote_produccion">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+String lote_produccion
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="rendimiento">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/double.html">double</a>         <strong>rendimiento</strong> <a class="anchor-link"
+            href="#rendimiento"
+            title="Permalink to OrdenProduccion.rendimiento">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+double rendimiento
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="valor_rescate">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/double.html">double</a>         <strong>valor_rescate</strong> <a class="anchor-link"
+            href="#valor_rescate"
+            title="Permalink to OrdenProduccion.valor_rescate">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+double valor_rescate
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method"><h4 id="ToJson">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>ToJson</strong>() <a class="anchor-link" href="#ToJson"
+              title="Permalink to OrdenProduccion.ToJson">#</a></h4>
+<div class="doc">
+<pre class="source">
+String ToJson(){
+ Map p_map = new Map();
+
+ p_map['id']                   = this.id;
+ p_map['fecha']                = this.fecha;
+ p_map['id_usuario']           = this.id_usuario;
+ p_map['id_usuario_embarques'] = this.id_usuario_embarques;
+ p_map['id_tipo']              = this.id_tipo;
+ p_map['descripcion']          = this.descripcion;
+ p_map['kilos_produccion']     = this.kilos_produccion;
+ p_map['rendimiento']          = this.rendimiento;
+ p_map['estado']               = this.estado;
+ p_map['lote_produccion']      = this.lote_produccion;
+ p_map['porcentaje']           = this.porcentaje;
+ p_map['cajas']                = this.cajas;
+ p_map['costo_maquila']        = this.costo_maquila.toDouble();
+ p_map['costo_maquila']        = this.valor_rescate.toDouble();
+ p_map['costo_salida']         = this.costo_salida.toDouble();
+ 
+ return JSON.encode(p_map);
+}
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        <div class="footer">
+          <div>This page was generated at 2014-01-16 10:01:29.538</div>
+        </div>
+        <script async src="../client-static.js"></script>
+        </body></html>
+        

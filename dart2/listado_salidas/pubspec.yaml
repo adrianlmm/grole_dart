@@ -1,0 +1,5 @@
+name: listado_salidas
+description: A sample web application
+dependencies:
+  browser: any
+  intl: any

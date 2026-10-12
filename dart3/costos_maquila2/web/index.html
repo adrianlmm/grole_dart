@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="scaffolded-by" content="https://github.com/dart-lang/stagehand">
+    <title>costos_maquila2</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+    <script defer src="main.dart.js"></script>
+    <meta charset="utf-8">
+    <title>Costos maquila</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <style>
+       .lf{
+          float: left;
+       }
+
+       .lr{
+          text-align: right !important;
+       }
+
+       .lfl{
+          margin-top: 5px;
+          margin-left: 10px;
+          margin-right: 10px;
+          font-weight: bold;
+       }
+
+       .ca{
+          clear: both;
+          margin-top: 70px;
+       }
+
+       .b{
+          font-weight: bold !important;
+       }
+    </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <input type="hidden" id="folio" value="1904">
+    <h2>Costos maquila</h2>
+    <div>
+        <div class="lf lfl">
+            Fecha Inicial:
+        </div>
+        <div class="lf">
+            <input type="text" id="inpFechaIni" class="input-small" autofocus>
+        </div>
+        <div class="lf lfl">
+            Fecha Final:
+        </div>
+        <div class="lf">
+            <input type="text" id="inpFechaFin" class="input-small">
+        </div>
+        <div class="lf lfl">
+            Depto:
+        </div>
+        <div class="lf">
+            <select id="inpDepto"></select>
+        </div>
+        <div class="lf lfl">
+            <button class="btn" style="margin-top: -5px;" id="btnConsultar">Consultar</button>&nbsp;<button class="btn" style="margin-top: -5px;" id="btnCancelar">Cancelar</button>
+        </div>
+    </div>
+    <div class="container">
+        <table class="table" id="gridLista">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Orden</th>
+                    <th>Clave</th>
+                    <th>Clave SAP</th>
+                    <th>Descripción</th>
+                    <th class="lr">Precio</th>
+                    <th class="lr">Kilos</th>
+                    <th class="lr">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+    </div>
+  </div>
+
+</body>
+
+</body>
+</html>

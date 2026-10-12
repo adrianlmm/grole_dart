@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<!--
+  Copyright (c) 2016, <your name>. All rights reserved. Use of this source code
+  is governed by a BSD-style license that can be found in the LICENSE file.
+-->
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="scaffolded-by" content="https://github.com/google/stagehand">
+    <title>entradas_mp</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="entrada_mp.dart" type="application/dart"></script>
+    <script defer src="packages/browser/dart.js"></script>
+</head>
+
+<body>
+
+  <div>
+
+      <div style="float: left;">
+          <div>
+              Proveedor:
+          </div>
+          <div>
+              <input type="text" id="inpClaveProveedor" style="width: 100px;">
+          </div>
+      </div>
+
+      <div style="float: left; margin-left: 5px;">
+          <div>
+              Nombre:
+          </div>
+          <div>
+              <input type="text" id="inpNombreProveedor">
+          </div>
+      </div>
+
+      <div style="float: left; margin-left: 5px;">
+          <div>
+              Referencia:
+          </div>
+          <div>
+              <input type="text" id="inpReferencia">
+          </div>
+      </div>
+
+      <div style="float: left; margin-left: 5px;">
+          <div>
+              Fecha:
+          </div>
+          <div>
+              <input type="text" id="inpFecha" value="10/10/2016">
+          </div>
+      </div>
+
+      <div style="float: left; margin-left: 5px;">
+          <div style="margin-top: 19px;">
+              <button id="btnDatosAduana">Datos de Aduana</button>
+          </div>
+      </div>
+
+  </div>
+  <dialog id="dlgDatosAduana" style="width: 500px;">
+
+      <h2>Datos Aduanales</h2>
+
+      <div>
+          <div>
+              <div style="float: left; width: 200px;">
+                  Pedimento:
+              </div>
+              <div style="float: left; width: 200px;">
+                  <input type="text" id="inpPedimento" style="width: 200px;">
+              </div>
+          </div>
+          <div style="margin-top: 15px;">
+              <div style="float: left; width: 200px;">
+                  Agente Aduanal:
+              </div>
+              <div style="float: left; width: 200px;">
+                  <input type="text" id="inpAgenteAduanal" style="width: 200px;">
+              </div>
+          </div>
+          <div style="margin-top: 15px;">
+              <div style="float: left; width: 200px;">
+                  Fecha Aduana:
+              </div>
+              <div style="float: left; width: 200px;">
+                  <input type="text" id="inpFechaAduana" style="width: 200px;" value="10/10/2016">
+              </div>
+          </div>
+          <div style="margin-top: 15px;">
+              <div style="float: left; width: 200px;">
+                  País de Origen:
+              </div>
+              <div style="float: left; width: 200px;">
+                  <input type="text" id="inpPaisOrigen" style="width: 200px;">
+              </div>
+          </div>
+          <div style="margin-top: 15px;">
+              <div style="float: left; width: 200px;">
+                  Aduana:
+              </div>
+              <div style="float: left; width: 200px;">
+                  <input type="text" id="inpAduana" style="width: 200px;">
+              </div>
+          </div>
+          <div style="margin-top: 15px;">
+              <div style="float: left; width: 200px;">
+                  Lugar de Origen:
+              </div>
+              <div style="float: left; width: 200px;">
+                  <input type="text" id="inpLugarOrigen" style="width: 200px;">
+              </div>
+          </div>
+          <div style="margin-top: 15px;">
+              <div style="float: left; width: 200px;">
+                  Nombre Origen:
+              </div>
+              <div style="float: left; width: 200px;">
+                  <input type="text" id="inpNombreOrigen" style="width: 200px;">
+              </div>
+          </div>
+          <div style="margin-top: 15px;">
+              <div style="float: left; width: 200px;">
+                  Ciudad Destino:
+              </div>
+              <div style="float: left; width: 200px;">
+                  <input type="text" id="inpCiudadDestino" style="width: 200px;">
+              </div>
+          </div>
+          <div style="margin-top: 15px;">
+              <div style="float: left; width: 200px;">
+                  .
+              </div>
+              <div style="float: left; width: 200px;">
+                  <button id="btnAceptarDlgDatosAduanales">Aceptar</button>
+              </div>
+          </div>
+      </div>
+
+  </dialog>
+
+</body>
+</html>

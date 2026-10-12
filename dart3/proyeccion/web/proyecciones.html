@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="scaffolded-by" content="https://github.com/google/stagehand">
+    <title>proyeccion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+    <script defer src="main.dart" type="application/dart"></script>
+    <script defer src="packages/browser/dart.js"></script>
+</head>
+
+<body>
+  <h2>Captura de Proyección de Producción</h2>
+  <div>
+      <div>Fecha:</div>
+      <div><input type="text" id="inpFecha">&nbsp;<button id="btnConsultar">Consultar</button></div>
+  </div>
+  <div>
+      <table id="tablaDetalle" style="width: 90%;">
+        <thead>
+            <tr>
+              <th style="text-align: left;">Clave</th>
+              <th style="text-align: left;">Clave SAP</th>
+              <th style="text-align: left;">Nombre</th>
+              <th style="text-align: right;">Cajas</th>
+              <th style="text-align: right;">Kilos</th>
+              <th></th>
+            </tr>
+            <tr>
+              <th style="text-align: left;"><input type="text" id="inpClave0" value=""/></th>
+              <th style="text-align: left;"><input type="text" id="inpClaveSAP0" readonly value=""/></th>
+              <th style="text-align: left;"><input type="text" id="inpNombre0" readonly value=""/></th>
+              <th style="text-align: right;"><input type="text" id="inpCajas0" style="text-align: right;" value="1"/></th>
+              <th style="text-align: right;"><input type="text" id="inpKilos0" style="text-align: right;" value="0.0"/></th>
+              <th><button id="btnAgregar" style="font-weight: bold;">+</button></th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+  </div>
+
+  <div style="display: none;">
+    <table>
+      <tr id="trTmp">
+        <th style="text-align: left;"><input type="text" value=""/></th>
+        <th style="text-align: left;"><input type="text" readonly value=""/></th>
+        <th style="text-align: left;"><input type="text" readonly value=""/></th>
+        <th style="text-align: right;"><input type="text" style="text-align: right;" value="1"/></th>
+        <th style="text-align: right;"><input type="text" style="text-align: right;" value="0.0"/></th>
+        <th><button id="btnAgregar" style="font-weight: bold;">+</button></th>
+      </tr>
+  </table>
+  </div>
+</body>
+<script src="/dart/captura_proyeccion.dart.js"></script>
+</html>

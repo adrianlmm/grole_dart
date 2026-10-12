@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="scaffolded-by" content="https://github.com/dart-lang/stagehand">
+    <title>orden_produccion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+    <script defer src="main.dart.js"></script>
+</head>
+
+<body>
+
+  <input type="hidden" id="inpOrdenEtiquetas" value="Si"/>
+    <a href="programacion_lote.html">Programación</a>
+<div class="page">
+    <div id="header">
+        <div id="title">
+            <h1>Control de Rastro Grole</h1>
+        </div>
+        <br/>
+        <div id="logindisplay">
+            Bienvenido(a) <strong>sistemas</strong>! [ <a href="/menu">Menu</a> ] [ <a href="/logoff">Salir</a> ]
+        </div>
+        <div id="menucontainer">
+            <ul id="menu">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/Home/About">Acerca de</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="main">
+        <h2 style="margin-left: 100px;">Orden de producción, estado: <span id="spanEstado"></span><span>, Empaque: <a id="anchorFolioEmpaque">0</a></span></h2>
+
+        <div id="mdlAgregarProductos" style="display: none;">
+            <div id="mdlAgregarProductos-body" style="width: 500px;">
+                <div class="modal-header">
+                    <button type="button" class="close" id="btnCerrarMdlAgregarProductos2" aria-hidden="true">×</button>
+                    <h3 id="myModalLabel">Agregar Producción</h3>
+                </div>
+                <div class="modal-body">
+
+                    <form class="form-horizontal">
+                        <div class="control-group">
+                            <label class="control-label" for="pClave">Clave:</label>
+                            <div class="controls">
+                                <input type="text" id="pClave" on-blur="despliega_producto()" autofocus>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="pDescripcion">Descripción:</label>
+                            <div class="controls">
+                                <input type="text" id="pDescripcion" disabled>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="pKilos">Kilos:</label>
+                            <div class="controls">
+                                <input type="text" id="pKilos" value="0.0">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="pCajas">Cajas:</label>
+                            <div class="controls">
+                                <input type="text" id="pCajas" value="0">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="pReceta">Receta:</label>
+                            <div class="controls">
+                                <select id="pReceta" disabled="disabled">
+                                    <option template repeat="item in Recetas" value="{{item.id.toString()}}" selected="{{$index == 0}}">{{item.descripcion}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" id="btnCerrarMdlAgregarProductos" aria-hidden="true">Cerrar</button>
+                    <button class="btn btn-primary" id="btnAceptarAgregarProducto">Agregar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mdlAgregarProductosMP" style="display: none;">
+            <div id="mdlAgregarProductosMP-body" style="width: 500px;">
+                <div class="modal-header">
+                    <button type="button" class="close" id="btnMdlAgregarProductosMP2" aria-hidden="true">×</button>
+                    <h3 id="myModalLabel">Agregar Materia Prima</h3>
+                </div>
+                <div class="modal-body">
+
+                    <form class="form-horizontal">
+                        <div class="control-group">
+                            <label class="control-label" for="mClave">Clave:</label>
+                            <div class="controls">
+                                <input type="text" id="mClave" autofocus>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="mDescripcion">Descripción:</label>
+                            <div class="controls">
+                                <input type="text" id="mDescripcion" disabled>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="mKilos">Kilos:</label>
+                            <div class="controls">
+                                <input type="text" id="mKilos" value="0.0">
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" id="btnMdlAgregarProductosMP" aria-hidden="true">Cerrar</button>
+                    <button class="btn btn-primary" id="btnAgregarMateriaPrima">Agregar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mdlModificarMateriaPrima" style="display: none;">
+            <div id="mdlModificarMateriaPrima-body" style="width: 500px;">
+                <div class="modal-header">
+                    <button type="button" class="close" id="btnCerrarMdlModificarMateriaPrima2" aria-hidden="true">×</button>
+                    <h3 id="myModalLabel">Modificar Materia Prima</h3>
+                </div>
+                <div class="modal-body">
+
+                    <form class="form-horizontal">
+                        <input type="hidden" id="idProgramado">
+                        <div class="control-group">
+                            <label class="control-label" for="pClave">Programado:</label>
+                            <div class="controls">
+                                <input type="text" id="pProgramadoMP" autofocus>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" id="btnCerrarMdlModificarMateriaPrima" aria-hidden="true">Cerrar</button>
+                    <button class="btn btn-primary" id="btnCambiaProgramado">Modificar</button>
+                </div>
+            </div>
+        </div>
+        <div id="mdlEditaCajas" style="display: none;">
+            <div id="mdlEditaCajas-body" style="width: 500px;">
+                <div class="modal-header">
+                    <button type="button" class="close" id="btnCerrarEditarCajas2" aria-hidden="true">×</button>
+                    <h3 id="myModalLabel">Modificar Materia Prima</h3>
+                </div>
+                <div class="modal-body">
+
+                    <form class="form-horizontal">
+                        <div class="control-group">
+                            <label class="control-label" for="pClave">Cajas:</label>
+                            <div class="controls">
+                                <input type="text" id="impCajas">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" id="btnCerrarEditarCajas" aria-hidden="true">Cerrar</button>
+                    <button class="btn btn-primary" id="btnCambiarCajas">Modificar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mdlEmpaque" style="display:none">
+            <div id="mdlEmpaque-body" style="width: 600px;">
+                <div class="modal-header">
+                    <button type="button" class="close" id="btnCerrarEmpaque2" aria-hidden="true">×</button>
+                    <h3 id="myModalLabel">Folio Empaque</h3>
+                </div>
+                <div class="modal-body">
+
+                    <div>
+                        Empaque:
+                    </div>
+                    <div>
+                        <input type="text" id="inpEmpaque"/>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" id="btnCerrarEmpaque" aria-hidden="true">Cancelar</button>
+                    <button class="btn btn-primary" id="btnEmpaqueAceptar">Aceptar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mdlInfoCaliente" style="display:none">
+            <div id="mdlInfoCaliente-body" style="width: 600px;">
+                <div class="modal-header">
+                    <button type="button" class="close" id="btnCerrarInfoCaliente2" aria-hidden="true">×</button>
+                    <h3 id="myModalLabel__">Folio Empaque</h3>
+                </div>
+                <div class="modal-body">
+
+                    <div>
+                        Lote:
+                    </div>
+                    <div>
+                        <input type="text" id="inpLoteCaliente"/>
+                    </div>
+
+                    <div>
+                        Granja:
+                    </div>
+                    <div>
+                        <input type="text" id="inpGranjaCaliente"/>
+                    </div>
+                    <div>
+                        Fecha:
+                    </div>
+                    <div>
+                        <input type="text" id="inpFechaCaliente"/>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" id="btnCerrarInfoCaliente" aria-hidden="true">Cancelar</button>
+                    <button class="btn btn-primary" id="btnInfoCalienteAceptar">Aceptar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mdlMarinado" style="display:none">
+            <div id="mdlMarinado-body" style="width: 900px;">
+                <div class="modal-header">
+                    <button type="button" class="close" id="btnCerrarMarinado" aria-hidden="true">×</button>
+                    <h3 id="myModalLabel_">Marinado</h3>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div>
+                            <div style="float: left;">
+                                <div>
+                                    <div>
+                                        Lote Prod:
+                                    </div>
+                                    <div>
+                                        <input type="text" id="inpLoteProdMarinador1" style="width: 60px;"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: left; margin-left: 20px;">
+                                <div>
+                                    <div>
+                                        Proveedor Marinador
+                                    </div>
+                                    <div>
+                                        <input type="text" id="inpProveedorMarinador1"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: left; margin-left: 20px;">
+                            <div>
+                                <div>
+                                    Producto:
+                                </div>
+                                <div>
+                                    <input type="text" id="inpProductoMarinador1"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="float: left; margin-left: 20px;">
+                        <div>
+                            <div>
+                                Lote Marinador:
+                            </div>
+                            <div>
+                                <input type="text" id="inpLoteMarinador1" style="width: 60px;"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="float: left; margin-left: 20px;">
+                    <div>
+                        <div>
+                            Folio Cert. Calidad:
+                        </div>
+                        <div>
+                            <input type="text" id="inpFolioCertCalidad1" style="width: 100px;"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="clear: both;"></div>
+            <div>
+                <div style="float: left;">
+                    <div>
+                        <div>
+                            Lote Prod:
+                        </div>
+                        <div>
+                            <input type="text" id="inpLoteProdMarinador2" style="width: 60px;"/>
+                        </div>
+                    </div>
+                </div>
+                <div style="float: left; margin-left: 20px;">
+                    <div>
+                        <div>
+                            Proveedor Marinador
+                        </div>
+                        <div>
+                            <input type="text" id="inpProveedorMarinador2"/>
+                        </div>
+                    </div>
+                </div>
+                <div style="float: left; margin-left: 20px;"">
+                <div>
+                    <div>
+                        Producto:
+                    </div>
+                    <div>
+                        <input type="text" id="inpProductoMarinador2"/>
+                    </div>
+                </div>
+            </div>
+            <div style="float: left; margin-left: 20px;"">
+            <div>
+                <div>
+                    Lote Marinador:
+                </div>
+                <div>
+                    <input type="text" id="inpLoteMarinador2" style="width: 60px;"/>
+                </div>
+            </div>
+        </div>
+        <div style="float: left; margin-left: 20px;"">
+        <div>
+            <div>
+                Folio Cert. Calidad:
+            </div>
+            <div>
+                <input type="text" id="inpFolioCertCalidad2" style="width: 100px;"/>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="modal-footer">
+    <button class="btn" id="btnCerrarMarinadoButton" aria-hidden="true">Cancelar</button>
+    <button class="btn btn-primary" id="btnMarinadoAceptar">Aceptar</button>
+</div>
+</div>
+</div>
+
+<input type="hidden" id="id">
+<input type="hidden" id="id_usuario" value="1">
+<input type="hidden" id="id_tipo" value="1">
+<div class="container">
+
+
+    <div class="row">
+        <div class="span3">
+            <div>
+                <h5>Descripción:</h5>
+            </div>
+            <div>
+                <input type="text" id="id_orden" class="input-large" autofocus>
+            </div>
+        </div>
+        <div class="span2">
+            <div>
+                <h5>Fec. Prod:</h5>
+            </div>
+            <div>
+                <input type="text" id="fecha" class="input-small">
+            </div>
+        </div>
+        <div class="span2">
+            <div>
+                <h5>Lote Prod:</h5>
+            </div>
+            <div>
+                <input type="number" id="lote_produccion" class="input-small">
+            </div>
+        </div>
+        <div class="span2">
+            <div>
+                <h5>Clase:</h5>
+            </div>
+            <div>
+                <select id="inpClase" class="input-small" style="height: 40px;">
+
+                </select>
+            </div>
+        </div>
+        <div class="span2">
+            <div>
+                <h5>Val. Prod.:</h5>
+            </div>
+            <div>
+                <select id="inpValida" class="input-small" style="height: 40px;">
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+        </div>
+        <div class="span1">
+            <div>
+                <h5>Pedimento:</h5>
+            </div>
+            <div>
+                <input type="text" id="inpPedimento" class="input-small" value="0">
+            </div>
+        </div>
+        <div class="row" style="margin-left: 0px;">
+            <div class="span3">
+                <div>
+                    <h5>Validar surtido</h5>
+                </div>
+                <div>
+                    <select id="inpValidaSurtido" class="input-small" style="height: 40px;">
+                        <option value="Si">Si</option>
+                        <option value="No">No</option>
+                    </select>
+                    <button id="btnInfoMarinado">Info. Marinado</button>&nbsp<button id="btnInfoCaliente">Información Canales Calientes</button>
+                </div>
+            </div>
+            <div class="span2">
+                <div>
+                    <h5>Modo Cálculo</h5>
+                </div>
+                <div>
+                    <select id="inpModoCalculo" class="input-small" style="height: 40px;">
+                        <option value="Normal">Normal</option>
+                        <option value="Diferencia">Diferencia</option>
+                    </select>
+                </div>
+            </div>
+            <div class="span2">
+                <div>
+                    <h5>Cliente de Maquila</h5>
+                </div>
+                <div>
+                    <select id="inpClienteMaquila">
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <h4>Producción</h4>
+        <div>
+            <button class="btn" id="btnAgregarProduccion" style="margin-bottom: 10px;"><i class="icon-plus"></i></button>&nbsp;<button class="btn" id="btnRefrescarSurtido" style="margin-bottom: 10px;"><i class="icon-refresh"></i></button>
+        </div>
+    </div>
+
+    <div class="row">
+        <table class="table" id="tableOrdenPP">
+            <thead>
+            <tr>
+                <th style="width: 60px;">Clave</th>
+                <th style="width: 450px;">Descripción</th>
+                <th style="width: 300px;">Kilos</th>
+                <th style="width: 300px;">Cajas</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+    </div>
+
+    <div class="row">
+        <h4>Materia Prima</h4>
+        <div>
+            <button class="btn" id="btnAgregarMP" style="margin-bottom: 10px;"><i class="icon-plus"></i></button>
+        </div>
+    </div>
+
+    <div class="row">
+        <table class="table" id="tableOrdenMP">
+            <thead>
+            <tr>
+                <th style="width: 60px;">Clave</th>
+                <th style="width: 450px;">Descripción</th>
+                <th style="width: 300px;">Programado</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+    </div>
+
+    <div class="row">
+        <div clas="span12">
+            <button class="btn-primary" id="btnGuardar">Guardar</button>&nbsp;<button class="btn" id="btnCancelar">Cancelar</button>
+        </div>
+    </div>
+
+</div>
+
+
+</div>
+</div>
+
+</body>
+</html>

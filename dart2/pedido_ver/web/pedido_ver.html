@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pedido ver</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <style>
+
+      .oculto{
+          display: none;
+      }
+
+      .edit_btn{
+        margin-left: 5px;
+      }
+
+      .modal{
+            width: 900px;
+            height: 600px;
+            margin-left: -450px;
+        }
+
+      .input-small {
+          width: 100px !important;
+      }
+
+      .modal-w{
+          width: 950px;
+          height: 500px;
+          overflow-y: scroll;
+      }
+
+     .modal-o{
+            width: 400px;
+            height: 200px;
+       }
+
+    </style>
+  </head>
+  <body>
+    <input type="hidden" id="inpPlaza" value="LEO"/>
+    <input type="hidden" id="inpListaPrecios" value="8"/>
+    <h1 style="margin-bottom: 20px;">Pedido</h1>
+    <div>
+        <div style="float: left; width:230px;">
+            <div class="label_editor">
+                Cliente:
+            </div>
+            <div>
+                <input type="text" id="inpCliente">
+            </div>
+            <div class="label_editor" style="margin-right: 7px;">
+                Nombre:
+            </div>
+            <div>
+                <input type="text" id="inpNombreCliente">
+            </div>
+        </div>
+        <div style="float: left; width:230px;">
+            <div class="label_editor">
+                Vendedor:
+            </div>
+            <div>
+                <select id="inpVendedor">
+                </select>
+            </div>
+            <div class="label_editor">
+                Almacen:
+            </div>
+            <div>
+                <select id="inpAlmacen">
+                </select>
+            </div>
+        </div>
+        <div style="float: left; width:230px;">
+            <div class="label_editor">
+                Ruta:
+            </div>
+            <div>
+                <select id="inpRuta">
+                </select>
+            </div>
+            <div class="label_editor">
+                Fecha Entrega:
+            </div>
+            <div>
+                <input type="text" id="inpFechaEntrega">
+            </div>
+        </div>
+        <div style="float: left; width:230px;">
+            <div class="label_editor">
+                Comprometido:
+            </div>
+            <div>
+                <input type="text" id="inpComprometido" readonly>
+            </div>
+            <div class="label_editor">
+                Crédito:
+            </div>
+            <div>
+                <input type="text" id="inpCredito" readonly>
+            </div>
+        </div>
+        <div style="float: right; width:230px;">
+            <div class="label_editor">
+                Pedido:
+            </div>
+            <div>
+                <input type="text" id="inpFolio" class="input-small" value="00000" readonly>
+            </div>
+            <div class="label_editor" style="margin-right: 24px;">
+                Saldo:
+            </div>
+            <div>
+                <input type="text" id="inpSaldo" class="input-small" readonly>
+                <button id="btnDetalleSaldo" style="margin-bottom: 10px;">...</button>
+            </div>
+        </div>
+        <div style="float: left; width:230px;">
+          <div class="label_editor">
+              Sucursal:
+          </div>
+          <div>
+              <select id="inpEntregas">
+              </select>
+          </div>
+        </div>
+      <div style="float: left; width:400px;">
+          <div class="label_editor">
+              Observaciones:
+          </div>
+          <div>
+              <input type="text" id="inpObservaciones" style="width: 667px;" value="">
+          </div>
+      </div>
+      </div>
+      <div style="clear: both; margin-top: 20px;" class="">
+          <table style="width: 1000px;" id="gridData">
+              <thead>
+                  <tr>
+                      <th style="text-align: left;" style="width: 60px !important;">Clave</th>
+                      <th style="text-align: left; width:150px;">Nombre</th>
+                      <th class="columna_numero">Stock</th>
+                      <th class="columna_numero">Comprometido</th>
+                      <th class="columna_numero">Cajas</th>
+                      <th class="columna_numero">Kilos</th>
+                      <th class="columna_numero">Precio</th>
+                      <th class="columna_numero">Importe</th>
+                      <th></th>
+                  </tr>
+                  <tr>
+                      <td>
+                          <input type="text" id="claveProducto0" style="width:50px;">
+                      </td>
+                      <td>
+                          <input type="text" id="nombreProducto0" style="width:200px;">
+                      </td>
+                      <td>
+                          <input type="text" id="stock0" style="text-align: right; width: 90px;">
+                      </td>
+                      <td>
+                          <input type="text" id="comprometido0" style="text-align: right; width: 90px;">
+                      </td>
+                      <td>
+                          <input type="text" id="cajas0" style="text-align: right; width: 90px;">
+                      </td>
+                      <td>
+                          <input type="text" id="kilos0" style="text-align: right; width: 90px;">
+                      </td>
+                      <td>
+                          <input type="text" id="precio0" style="text-align: right; width: 90px;">
+                      </td>
+                      <td>
+                          <input type="text" id="importe0" style="text-align: right; width: 90px;">
+                      </td>
+                      <td>
+                        <div style="float:left; width:100px;">
+                          <button id="btnAgregarLineaPedido">+</button>&nbsp;<input type="button" id="btnCancelarModificacion" value="X" class="oculto">
+                        </div>
+                      </td>
+                  </tr>
+              </thead>
+              <tbody>
+              </tbody>
+          </table>
+      </div>
+      <div style="margin-top: 30px;">
+          <div>
+              <button id="btnGuardar">Guardar</button>&nbsp;<button id="btnCancelar">Cancelar</button>
+          </div>
+      </div>
+
+   <div id="mc" style="display: none">
+        <div id="mc-body" class="modal-w">
+            <div style="text-align: center; font-weight: bold; background: navajowhite;">
+                Datalle de Saldo
+            </div>
+            <div style="margin-top: 5px;">
+                <button id="btnCerrar">Cerrar</button>&nbsp;&nbsp;<span style="font-weight: bold;">Riesgo:</span><span id="spanRiesgo"></span>&nbsp;&nbsp;<span style="font-weight: bold;">Dias Cred. Disponibles:</span><span id="spanDiasCred"></span>&nbsp;&nbsp;<span style="font-weight: bold;">Tipo:</span><span id="spanTipo"></span>
+
+                <table id="gridDetalle" class="table" style="">
+                    <thead>
+                        <tr>
+                            <th>Documento</th>
+                            <th style="text-align: center">Fecha Contable</th>
+                            <th style="text-align: center">Fecha Vencimiento</th>
+                            <th>Concepto</th>
+                            <th style="text-align: right; width:100px;">Saldo</th>
+                            <th style="text-align: right; width:80px;">Días Vencidos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="mo" style="display: none">
+        <div id="mo-body" class="modal-o">
+            <div style="padding-top: 50px; padding-left: 20px;">
+                <div>
+                    <span style="font-weight: bold;">Observaciones</span>
+                </div>
+                <div>
+                    <div>
+                        <input type="text" id="inpObservacionesAutorizaciones" style="width: 350px;" value=""/>
+                    </div>
+                    <button id="btnAceptarObservaciones" style="margin-left: 300px;">Aceptar</button>
+                </div>
+             </div>
+        </div>
+    </div>
+
+    <script src="packages/browser/dart.js"></script>
+    <script type="application/dart" src="pedido_ver.dart"></script>
+
+  </body>
+</html>

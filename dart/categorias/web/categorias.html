@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Control de Rastro Grole 3</title>
+    <link href="/styles/site.css" rel="stylesheet" type="text/css" />
+    <link href="/styles/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+    
+      @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+      @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+      @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+      
+      .oculto{
+        display: none;
+      }
+      
+      .fade-in {
+        opacity:0;  /* make things invisible upon start */
+        -webkit-animation:fadeIn ease-in 0.1s;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+        -moz-animation:fadeIn ease-in 0.1s;
+        animation:fadeIn ease-in 0.1s;
+     
+        -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+        -moz-animation-fill-mode:forwards;
+        animation-fill-mode:forwards;
+     
+        -webkit-animation-duration:0.2s;
+        -moz-animation-duration:0.2s;
+        animation-duration:0.2s;
+      }
+       
+      .fade-in.one {
+        -webkit-animation-delay: 0.1s;
+        -moz-animation-delay: 0.1s;
+        animation-delay: 0.1s;
+      }
+      
+      .button_edit{
+         margin-right: 5px;
+      }
+      
+      .input_edit{
+         height: 19px; margin-bottom: 0px; border-radius: 0px;
+      }
+      
+      .select_edit{
+         height: 26px;
+         width: 90px;
+         margin-bottom: 0px;
+         border-radius: 0px;
+      }
+      
+      
+    </style>
+  </head>
+  <body>
+    <body class="body">
+     <div class="page">
+          <div id="header">
+              <div id="title">
+                  <h1>Control de Rastro Grole</h1>
+              </div>
+        <br/>
+              <div id="logindisplay">
+            Bienvenido(a) <strong>sistemas</strong>! [ <a href="/menu">Menu</a> ] [ <a href="/logoff">Salir</a> ]
+              </div>
+              <div id="menucontainer">
+                  <ul id="menu">
+                      <li><a href="/">Inicio</a></li>
+                      <li><a href="/Home/About">Acerca de</a></li>
+                  </ul>
+              </div>
+          </div>
+     <div id="main">
+    <h1>Pure html</h1>
+    
+    
+      <table id="t1">
+          <thead>
+              <tr>
+                  <td class="oculto">Id</td>
+                  <td>Categoria</td>
+                  <td>Activo</td>
+                  <td></td>  
+              </tr>
+              <tr id="thCategoria_">
+                  <td class="oculto"><input type="text" class="input_edit" id="inpId"></td>
+                  <td><input type="text" id="inpCategoria" style="height: 16px; margin-bottom: 0px; border-radius: 0px;" autofocus></td>
+                  <td><select id="inpActivo" class="input-small select_edit"><option value="Si" selected="selected">Si</option><option value="No">No</option></select></td>
+                  <td style="width: 100px;"><button class="btn" id="btnAgregar" ><i class="icon-plus"></i></button></td>
+              </tr>    
+          </thead>
+      </table>
+    
+    <script type="application/dart" src="categorias.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>

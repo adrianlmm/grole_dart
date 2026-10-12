@@ -1,0 +1,4 @@
+name: clientes_grole
+description: A sample web application
+dependencies:
+  browser: any

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>destino</title>
+    <link rel='stylesheet' href="clases.css">
+  </head>
+  <body>
+    <h1>destino</h1>
+    <div id='sample_container_id'>
+      <div>
+        <div><input type="button" value="Modificar" id="btnPermiteEdicion" on-click="modificar()"></div>
+      </div>
+      <table id="tdatos" class="tabla_datos">
+        <thead>
+          <tr>
+            <th style="display:none;">Clave</th>
+            <th>NombreDestino</th>
+            <th template instantiate="if modo_insercion"></th>
+          </tr>
+          <tr template instantiate="if permite_edicion">
+            <th style="display:none;"><input type="text" id="clave" value="0" disabled="disabled"></th>
+            <th><input type="text" id="nombredestino" value=""></th>
+            <th template instantiate="if permite_edicion"><input type="button" id="btnAgregar" value="Agregar" on-click="agregar()"><template instantiate="if !modo_insercion"><input type="button" id="btnCancelar" value="Cancelar" on-click="cancelar()"></template></th>
+          </tr> 
+        </thead>
+        <tbody template iterate="item in lista_destino">
+          <tr template instantiate="if modo_insercion">
+            <td style='display:none;'>{{item.clave}}</td>
+            <td>{{item.nombredestino}}</td>
+            <td template instantiate="if modo_insercion && permite_edicion"><a href="#" on-click="eliminar(item)" class="boton_eliminar">x</a>&nbsp&nbsp<a href="#" on-click="editar(item)" class="boton_editar">m</a></td>
+          </tr>
+        </tbody>
+        <tfoot>
+        </tfoot>
+      </table>
+    </div>
+    <script type="application/dart" src="destinos.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+name: detalle_costos_maquila
+description: A sample web application
+dependencies:
+  browser: any
+  intl: any

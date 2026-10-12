@@ -1,0 +1,36 @@
+# ============================================================
+# grole_dart - .gitignore raiz
+# Se ignoran artefactos generados / derivados.
+# SE CONSERVA el JavaScript ya compilado (*.dart.js,
+# *.precompiled.js) porque estas apps legacy se despliegan asi.
+# ============================================================
+
+# --- Dart / pub (dependencias descargadas y cache) ---
+packages/
+.pub/
+.dart_tool/
+
+# --- Salidas de compilacion ---
+build/
+*.snapshot
+*.buildlog
+*.js.deps
+*.js.map
+*.info.json
+
+# --- IDE / editores ---
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# --- Sistema operativo ---
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# --- Temporales ---
+*.tmp
+*.bak
+~$*

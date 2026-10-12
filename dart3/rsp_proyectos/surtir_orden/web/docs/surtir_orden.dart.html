@@ -1,0 +1,1758 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>surtir_orden.dart Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="styles.css">
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="favicon.ico">
+        
+        </head>
+        <body data-library="surtir_orden.dart">
+        <div class="page">
+        <div class="header">
+          <a href="index.html"><div class="logo"></div></a>
+          <a href="index.html">Dart Documentation</a>
+         &rsaquo; <a href="surtir_orden.dart.html">surtir_orden.dart</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+<h2><div class="icon-library"></div><a href="date_format_internal.html">date_format_internal</a></h2><h2><div class="icon-library"></div><a href="date_symbols.html">date_symbols</a></h2><h2><div class="icon-library"></div><a href="DetalleMP.html">DetalleMP</a></h2><h2><div class="icon-library"></div><a href="intl.html">intl</a></h2><h2><div class="icon-library"></div><a href="intl_helpers.html">intl_helpers</a></h2><h2><div class="icon-library"></div><a href="LibOrdenProduccion.html">LibOrdenProduccion</a></h2><h2><div class="icon-library"></div><a href="meta.html">meta</a></h2><h2><div class="icon-library"></div><a href="metadata.html">metadata</a></h2><h2><div class="icon-library"></div><a href="ModalP.html">ModalP</a></h2><h2><div class="icon-library"></div><a href="number_symbols.html">number_symbols</a></h2><h2><div class="icon-library"></div><a href="number_symbol_data.html">number_symbol_data</a></h2><h2><div class="icon-library"></div><a href="OrdenPP.html">OrdenPP</a></h2><h2><div class="icon-library"></div><a href="SalidaInventario.html">SalidaInventario</a></h2><h2><div class="icon-library"></div><strong>surtir_orden.dart</strong></h2></div>
+<div class="content">
+<h2><strong>surtir_orden.dart</strong> library</h2>
+<div>
+<h3>Properties</h3>
+<div class="field"><h4 id="editable">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>editable</strong> <a class="anchor-link"
+            href="#editable"
+            title="Permalink to editable">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+bool editable = true
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="EventoCostoMaquila">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_async/StreamSubscription.html">StreamSubscription</a>         <strong>EventoCostoMaquila</strong> <a class="anchor-link"
+            href="#EventoCostoMaquila"
+            title="Permalink to EventoCostoMaquila">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+StreamSubscription EventoCostoMaquila = null
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="EventoCostoSalida">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_async/StreamSubscription.html">StreamSubscription</a>         <strong>EventoCostoSalida</strong> <a class="anchor-link"
+            href="#EventoCostoSalida"
+            title="Permalink to EventoCostoSalida">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+StreamSubscription EventoCostoSalida = null
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="EventoValorRescate">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_async/StreamSubscription.html">StreamSubscription</a>         <strong>EventoValorRescate</strong> <a class="anchor-link"
+            href="#EventoValorRescate"
+            title="Permalink to EventoValorRescate">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+StreamSubscription EventoValorRescate = null
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="FolioSalida">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>FolioSalida</strong> <a class="anchor-link"
+            href="#FolioSalida"
+            title="Permalink to FolioSalida">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+String FolioSalida = "-"
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="IdOrden">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>IdOrden</strong> <a class="anchor-link"
+            href="#IdOrden"
+            title="Permalink to IdOrden">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+String IdOrden = ""
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="ListaDetalle">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="DetalleMP/DetalleMP.html">DetalleMP</a>&gt;         <strong>ListaDetalle</strong> <a class="anchor-link"
+            href="#ListaDetalle"
+            title="Permalink to ListaDetalle">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+List&lt;DetalleMP&gt; ListaDetalle = new List&lt;DetalleMP&gt;()
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="ListaDetalleTarima">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="DetalleMP/DetalleMPTarima.html">DetalleMPTarima</a>&gt;         <strong>ListaDetalleTarima</strong> <a class="anchor-link"
+            href="#ListaDetalleTarima"
+            title="Permalink to ListaDetalleTarima">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+List&lt;DetalleMPTarima&gt; ListaDetalleTarima = new List&lt;DetalleMPTarima&gt;()
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="ListaOrdenPMP">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="OrdenPP/OrdenMP.html">OrdenMP</a>&gt;         <strong>ListaOrdenPMP</strong> <a class="anchor-link"
+            href="#ListaOrdenPMP"
+            title="Permalink to ListaOrdenPMP">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+List&lt;OrdenMP&gt; ListaOrdenPMP = new List&lt;OrdenMP&gt;()
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="ListaOrdenPP">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="OrdenPP/OrdenMP.html">OrdenMP</a>&gt;         <strong>ListaOrdenPP</strong> <a class="anchor-link"
+            href="#ListaOrdenPP"
+            title="Permalink to ListaOrdenPP">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+List&lt;OrdenMP&gt; ListaOrdenPP  = new List&lt;OrdenMP&gt;()
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="ListaProduccion">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="LibOrdenProduccion/Produccion.html">Produccion</a>&gt;         <strong>ListaProduccion</strong> <a class="anchor-link"
+            href="#ListaProduccion"
+            title="Permalink to ListaProduccion">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+List&lt;Produccion&gt; ListaProduccion = new List&lt;Produccion&gt;()
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="POrdenProduccion">
+<button class="show-code">Code</button>
+<a href="LibOrdenProduccion/OrdenProduccion.html">OrdenProduccion</a>         <strong>POrdenProduccion</strong> <a class="anchor-link"
+            href="#POrdenProduccion"
+            title="Permalink to POrdenProduccion">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+OrdenProduccion POrdenProduccion = new OrdenProduccion()
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="SurtidoTotal">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/double.html">double</a>         <strong>SurtidoTotal</strong> <a class="anchor-link"
+            href="#SurtidoTotal"
+            title="Permalink to SurtidoTotal">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+double SurtidoTotal = 0.0
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Functions</h3>
+<div class="method"><h4 id="main">
+<button class="show-code">Code</button>
+void <strong>main</strong>() <a class="anchor-link" href="#main"
+              title="Permalink to main">#</a></h4>
+<div class="doc">
+<pre class="source">
+void main() {
+   HiddenInputElement pInpEditable = document.querySelector("#inpEditable") as HiddenInputElement;
+   editable = pInpEditable.value == "true";
+   
+   ObtenerOrdenProduccion(ObtenerIdOrden());
+   
+   ButtonElement btnCerrarDetalleCosto = querySelector("#btn1");
+   btnCerrarDetalleCosto.onClick.listen((_){
+     
+     ModalP.cierra_modal("mdlAgregarCosto");
+     
+   });
+   
+   AnchorElement anchorDetalleOrdenTarima = querySelector("#anchorDetalleOrdenTarima") as AnchorElement;
+   anchorDetalleOrdenTarima.onClick.listen((_){
+       detalleOrdenTarima();
+   });
+   
+   ButtonElement btnCerrarDetalleTarima = querySelector("#btnCerrarDetalleTarima");
+   btnCerrarDetalleTarima.onClick.listen((_){
+       cerrarDetalleTarima();
+   });
+   
+   ButtonElement cerrarDetalledoCajaTarima = querySelector("#cerrarDetalladoCajaTarima");
+   cerrarDetalledoCajaTarima.onClick.listen((_){
+       cerrarDetalladoTarima();
+   });
+
+   ButtonElement btnImprimir = querySelector("#btnImprimir");
+   btnImprimir.onClick.listen((_){
+       imprimir();
+   });
+   
+   AnchorElement anchorSaldoSap = querySelector("#anchorSaldoSap") as AnchorElement;
+   anchorSaldoSap.onClick.listen((_){
+       ActualizaSaldosSap();
+   });
+   
+   ButtonElement btnGeneraSalida = querySelector("#btnGeneraSalida");
+   btnGeneraSalida.onClick.listen((_){
+       PidePassword();
+   });
+   
+   ButtonElement btnCerrarPassword = querySelector("#btnCerrarPassword");
+   btnCerrarPassword.onClick.listen((_){
+       ModalP.cierra_modal("mdlPassword");
+   });
+   
+   ButtonElement btnCerrarPassword2 = querySelector("#btnCerrarPassword2");
+   btnCerrarPassword2.onClick.listen((_){
+       ModalP.cierra_modal("mdlPassword");
+   });
+   
+   ButtonElement btnPasswordAceptar = querySelector("#btnPasswordAceptar");
+   btnPasswordAceptar.onClick.listen((_){
+       GeneraSalidaSap();
+   });
+
+   ButtonElement mdlCostoMaquila_cerrar = querySelector("#mdlCostoMaquila_cerrar");
+   mdlCostoMaquila_cerrar.onClick.listen((_){
+     ModalP.cierra_modal("mdlCostoMaquila");
+   });
+   
+   ButtonElement mdlCostoMaquila_cerrar2 = querySelector("#mdlCostoMaquila_cerrar2");
+   mdlCostoMaquila_cerrar2.onClick.listen((_){
+       ModalP.cierra_modal("mdlCostoMaquila");
+   });
+   
+   ButtonElement btnCerrarDetalleProducidoAceptar = querySelector("#btnProducidoAceptar");
+   btnCerrarDetalleProducidoAceptar.onClick.listen((_){
+       ModalP.cierra_modal("mdlDetalleProducido");
+   });
+   
+   ButtonElement btnCerrarDetalleProducido = querySelector("#btnCerrarDetalleProducido");
+   btnCerrarDetalleProducido.onClick.listen((_){
+     ModalP.cierra_modal("mdlDetalleProducido");
+   });
+   
+   ButtonElement btnCerrarDetalleProducido2 = querySelector("#btnCerrarDetalleProducido2");
+   btnCerrarDetalleProducido2.onClick.listen((_){
+       ModalP.cierra_modal("mdlDetalleProducido");
+   });
+   
+   ButtonElement btnCerrarValorRescate = querySelector("#btnCerrarValorRescate");
+   btnCerrarValorRescate.onClick.listen((_){
+     ModalP.cierra_modal("mdlValorRescate");
+   });
+   
+   ButtonElement btnCerrarValorRescate2 = querySelector("#btnCerrarValorRescate2");
+   btnCerrarValorRescate2.onClick.listen((_){
+     ModalP.cierra_modal("mdlValorRescate");
+   });
+   
+   ButtonElement btnPasswordAceptar2 = querySelector("#btnPasswordAceptar2");
+   btnPasswordAceptar2.onClick.listen((_){
+       GeneraEntradaSap();
+   });
+   
+   ButtonElement btnCerrarMdlPassword = querySelector("#btnCerrarMdlPassword");
+   btnCerrarMdlPassword.onClick.listen((_){
+     ModalP.cierra_modal("mdlPassword2");
+   });
+   
+   ButtonElement btnCerrarMdlPassword2 = querySelector("#btnCerrarMdlPassword2");
+   btnCerrarMdlPassword2.onClick.listen((_){
+     ModalP.cierra_modal("mdlPassword2");
+   });
+   
+   
+   /*document.querySelector("#mdlAgregarProductos").classes.remove("hiden");
+   document.querySelector("#mdlAgregarCosto").classes.remove("hiden");
+   document.querySelector("#mdlCostoMaquila").classes.remove("hiden");
+   document.querySelector("#mdlPassword").classes.remove("hiden");
+   document.querySelector("#mdlPassword2").classes.remove("hiden");
+   document.querySelector("#mdlDetalleProducido").classes.remove("hiden");
+   document.querySelector("#mdlValorRescate").classes.remove("hiden");*/
+   
+   Timer.run(()=&gt;document.querySelector("#id_orden").focus());  
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="GeneraEntradaSap">
+<button class="show-code">Code</button>
+void <strong>GeneraEntradaSap</strong>() <a class="anchor-link" href="#GeneraEntradaSap"
+              title="Permalink to GeneraEntradaSap">#</a></h4>
+<div class="doc">
+<pre class="source">
+void GeneraEntradaSap(){
+
+	String pPassword = document.querySelector("#mPassword2").value;
+	
+	if (pPassword != "soles123"){
+		window.alert("Contraseña incorrecta");
+		document.querySelector("#mPassword2").focus();
+		return;
+	}
+	
+	ModalP.cierra_modal("#mdlPassword2");
+	(document.querySelector("#btnEntrada") as ButtonElement).disabled = true;
+	
+	SalidaInventario pSalidaInventario = new SalidaInventario();
+	
+	pSalidaInventario.Comments         = POrdenProduccion.descripcion;
+	pSalidaInventario.DocDate          = (document.querySelector("#fecha") as InputElement).value;
+	pSalidaInventario.TaxDate          = pSalidaInventario.DocDate;
+	pSalidaInventario.OrdenProduccion  = IdOrden;
+	pSalidaInventario.Reference2       = IdOrden.toString();
+	pSalidaInventario.Series           = "107";
+	pSalidaInventario.FolioSalida      = POrdenProduccion.id_salida;
+	
+	for (Produccion item in ListaProduccion){
+	
+		if (item.producido &gt; 0){
+			LineaSalidaInventario pLinea = new LineaSalidaInventario();
+			pLinea.ItemCode      = item.codigosap;
+			pLinea.AccountCode   = "11100010060";
+			pLinea.Quantity      = item.producido;
+			pLinea.WarehouseCode = "01";
+			pLinea.CostingCode   = "PL1";
+			
+			pSalidaInventario.Lineas.add(pLinea);
+		}
+	}
+
+	var pUrl = "http://192.168.0.11/webfrontend/inventarios/CrearEntrada";
+	Map&lt;String, String&gt; headers = new Map&lt;String, String&gt;();
+	headers["content-type"] = "application/x-www-form-urlencoded";
+	
+	String Data = pSalidaInventario.toJSON();
+	HttpRequest.request(pUrl, method: "POST", responseType: "application/json", sendData: Data, requestHeaders: headers).then((HttpRequest pRequest){
+	print("-================================================-");
+	print(pRequest.responseText);
+	
+	Map pMapResult = JSON.decode(pRequest.responseText);
+	
+	window.alert(pMapResult["Mensaje"]);
+	
+	if (pMapResult["Folio"] == "1"){
+	
+		(document.querySelector("#btnEntrada") as ButtonElement).classes.add("hiden");
+		(document.querySelector("#btnSalida") as ButtonElement).classes.add("hiden");
+		
+		String pUrl = 'http://localhost:8031/rest/ordenp/ordenmp_finalizar/${IdOrden}';
+		POrdenProduccion.estado = "Generado";
+		document.querySelector("#spanEstado").text = "Finalizado";
+		
+		HttpRequest.request(pUrl, method: "PUT" , responseType: "application/json").then((HttpRequest pReq){
+			print(pReq.responseText);
+		}).then((HttpRequest pRequest){
+			ActualizaCostoSap();
+		});
+	}
+	else{
+		(document.querySelector("#btnEntrada") as ButtonElement).disabled = false;
+	}
+	
+  });
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="PidePassword2">
+<button class="show-code">Code</button>
+void <strong>PidePassword2</strong>() <a class="anchor-link" href="#PidePassword2"
+              title="Permalink to PidePassword2">#</a></h4>
+<div class="doc">
+<pre class="source">
+void PidePassword2(){
+	if (!window.confirm("¿Generar Entrada en SAP?")){
+		return;
+	}
+
+	ModalP.modal("#mdlPassword2");
+	document.querySelector("#mPassword2").focus(); 
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="PidePassword">
+<button class="show-code">Code</button>
+void <strong>PidePassword</strong>() <a class="anchor-link" href="#PidePassword"
+              title="Permalink to PidePassword">#</a></h4>
+<div class="doc">
+<pre class="source">
+void PidePassword(){
+ if (!window.confirm("¿Generar Salida en SAP?")){
+   return;
+ }
+ 
+ ModalP.modal("mdlPassword");
+ document.querySelector("#mPassword").focus(); 
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="GeneraSalidaSap">
+<button class="show-code">Code</button>
+void <strong>GeneraSalidaSap</strong>() <a class="anchor-link" href="#GeneraSalidaSap"
+              title="Permalink to GeneraSalidaSap">#</a></h4>
+<div class="doc">
+<pre class="source">
+void GeneraSalidaSap(){
+ 
+   String pPassword = document.querySelector("#mPassword").value;
+   
+   if (pPassword != "551"){
+       window.alert("Contraseña incorrecta");
+       document.querySelector("#mPassword").focus();
+       return;
+   }
+   
+    ModalP.cierra_modal("mdlPassword");
+   (document.querySelector("#btnGeneraSalida") as ButtonElement).disabled = true;
+ 
+   SalidaInventario pSalidaInventario = new SalidaInventario();
+   
+   pSalidaInventario.Comments         = POrdenProduccion.descripcion;
+   pSalidaInventario.DocDate          = (document.querySelector("#fecha") as InputElement).value;
+   pSalidaInventario.TaxDate          = pSalidaInventario.DocDate;
+   pSalidaInventario.OrdenProduccion  = IdOrden;
+   pSalidaInventario.Reference2       = IdOrden.toString();
+   pSalidaInventario.Series           = "107";
+   pSalidaInventario.FolioSalida      = POrdenProduccion.id_salida;
+   
+   for (OrdenMP item in ListaOrdenPMP){
+         
+       if (item.surtido &gt; 0){
+           LineaSalidaInventario pLinea = new LineaSalidaInventario();
+           pLinea.ItemCode      = item.codigosap;
+           pLinea.AccountCode   = "11100010060";
+           pLinea.Quantity      = item.surtido;
+           pLinea.WarehouseCode = "01";
+           pLinea.CostingCode   = "PL1";
+           
+           pSalidaInventario.Lineas.add(pLinea);
+       }
+   }
+   
+   var pUrl = "http://192.168.0.11/webfrontend/inventarios/CrearSalida";
+   Map&lt;String, String&gt; headers = new Map&lt;String, String&gt;();
+   headers["content-type"] = "application/x-www-form-urlencoded";
+   
+   String Data = pSalidaInventario.toJSON();
+   HttpRequest.request(pUrl, method: "POST", responseType: "application/json", sendData: Data, requestHeaders: headers).then((HttpRequest pRequest){
+       print("-================================================-");
+       print(pRequest.responseText);
+       
+       Map pMapResult = JSON.decode(pRequest.responseText);
+       
+       window.alert(pMapResult["Mensaje"]);
+       
+       if (pMapResult["Folio"] == "1"){
+         
+         (document.querySelector("#btnGeneraSalida") as ButtonElement).classes.add("hiden");
+         (document.querySelector("#btnSalida") as ButtonElement).classes.add("hiden");
+
+         String pUrl = 'http://localhost:8031/rest/ordenp/ordenmp_generar/${IdOrden}';
+         POrdenProduccion.estado = "Generado";
+         document.querySelector("#spanEstado").text = "Generado";
+         
+         HttpRequest.request(pUrl, method: "PUT" , responseType: "application/json").then((HttpRequest pReq){
+             print(pReq.responseText);
+         }).then((HttpRequest pRequest){
+             ActualizaCostoSap();
+         });
+       }
+       else{
+         (document.querySelector("#btnGeneraSalida") as ButtonElement).disabled = false;
+       }
+       
+   });
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="ActualizaCostoSap">
+<button class="show-code">Code</button>
+void <strong>ActualizaCostoSap</strong>() <a class="anchor-link" href="#ActualizaCostoSap"
+              title="Permalink to ActualizaCostoSap">#</a></h4>
+<div class="doc">
+<pre class="source">
+void ActualizaCostoSap(){
+ String pUrl = "";
+ 
+ for (OrdenMP item in ListaOrdenPMP){
+   
+   if (item.surtido &gt; 0){
+   
+       pUrl = "http://192.168.0.11/WebFrontEnd/inventarios/ObtenerCostoLineaSalida?Orden=${IdOrden.toString()}&amp;Producto=${item.codigosap}&amp;Empresa=SolesProd";
+       
+       print(pUrl);
+   
+       HttpRequest.getString(pUrl).then((String Data){
+         double pCosto = JSON.decode(Data).toDouble();
+         item.costo_salida = pCosto;
+         item.importe_salida = pCosto * item.surtido;
+         
+         Map&lt;String, String&gt; headers = new Map&lt;String, String&gt;();
+         headers["content-type"] = "application/x-www-form-urlencoded";
+         
+         String pData = '{"costo":"${pCosto.toDouble()}", "importe":"${item.importe_salida.toDouble()}"';
+         
+         String pUrlPost = "http://localhost:8031/rest/ordenp/actualiza_costo_linea_sap/${item.id}";
+         HttpRequest.request(pUrlPost, method: "POST", responseType: "application/json", sendData: pData, requestHeaders: headers);
+       });
+    }
+  }
+ 
+  var pUrlCosto = "http://192.168.0.11/WebFrontEnd/inventarios/ObtenerCostoSalida?Orden=${IdOrden.toString()}&amp;Cuenta=11100030001&amp;Empresa=SolesProd";
+  print(pUrlCosto);
+  
+  HttpRequest.getString(pUrlCosto).then((String Data){
+     
+     double pCosto = JSON.decode(Data);
+     POrdenProduccion.costo_salida = pCosto;
+     (document.querySelector("#TotalImporteP") as SpanElement).innerHtml = new intl.NumberFormat("###,0.00").format(pCosto);
+     
+     String pUrl = "http://localhost:8031/rest/ordenp/actualizar_costo_salida_orden/${IdOrden.toString()}";
+     String pData = '{"costo": "${pCosto.toString()}" }';
+     Map&lt;String, String&gt; headers = new Map&lt;String, String&gt;();
+     headers["content-type"] = "application/json";
+     
+     HttpRequest.request(pUrl, method: "POST", responseType: "application/json", sendData: pData, requestHeaders: headers);
+     
+  });
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="ActualizaSaldosSap">
+<button class="show-code">Code</button>
+void <strong>ActualizaSaldosSap</strong>() <a class="anchor-link" href="#ActualizaSaldosSap"
+              title="Permalink to ActualizaSaldosSap">#</a></h4>
+<div class="doc">
+<pre class="source">
+void ActualizaSaldosSap(){
+   if (window.confirm("¿Actualizar saldos?")){
+       
+       String pUrl = "";
+       
+       for (OrdenMP item in ListaOrdenPMP){
+           pUrl = "http://192.168.0.11/WebFrontEnd/inventarios/ObtenerSaldoProducto?AProducto=${item.codigosap}&amp;AAlmacen=01&amp;AConexion=SolesProd";
+           print(pUrl);
+           
+           HttpRequest.getString(pUrl).then((String Data){
+         
+               print(Data);
+               Map pMap = JSON.decode(Data);
+               item.saldo_sap = pMap['saldo'].toDouble();
+               
+               Map&lt;String, String&gt; headers = new Map&lt;String, String&gt;();
+               headers["content-type"] = "application/x-www-form-urlencoded";
+               
+               String pUrlPost = "http://localhost:8031/rest/ordenp/actualiza_saldo_sap/${item.id}";
+               print(pUrlPost);
+               HttpRequest.request(pUrlPost, method: "POST", responseType: "application/json", sendData: Data, requestHeaders: headers);
+               
+               actualizaFilaMPrima(item);
+               
+           });               
+       }
+   }
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="imprimir">
+<button class="show-code">Code</button>
+void <strong>imprimir</strong>() <a class="anchor-link" href="#imprimir"
+              title="Permalink to imprimir">#</a></h4>
+<div class="doc">
+<pre class="source">
+void imprimir(){
+   window.open("http://localhost:8031/get_surtido_orden/${IdOrden}", "surtido", "width: 400; heigth: 400px;");
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="cerrarDetalladoTarima">
+<button class="show-code">Code</button>
+void <strong>cerrarDetalladoTarima</strong>() <a class="anchor-link" href="#cerrarDetalladoTarima"
+              title="Permalink to cerrarDetalladoTarima">#</a></h4>
+<div class="doc">
+<pre class="source">
+void cerrarDetalladoTarima(){
+  document.querySelector("#divDetalladoTarima").classes.toggle("oculto", true);
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="cerrarDetalleTarima">
+<button class="show-code">Code</button>
+void <strong>cerrarDetalleTarima</strong>() <a class="anchor-link" href="#cerrarDetalleTarima"
+              title="Permalink to cerrarDetalleTarima">#</a></h4>
+<div class="doc">
+<pre class="source">
+void cerrarDetalleTarima(){
+  ModalP.cierra_modal("divDetalleTarima");
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="cerrarDetalle">
+<button class="show-code">Code</button>
+void <strong>cerrarDetalle</strong>() <a class="anchor-link" href="#cerrarDetalle"
+              title="Permalink to cerrarDetalle">#</a></h4>
+<div class="doc">
+<pre class="source">
+void cerrarDetalle(){
+  document.querySelector("#divDetalle").classes.toggle("oculto", true);
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="detalleOrdenTarima">
+<button class="show-code">Code</button>
+void <strong>detalleOrdenTarima</strong>() <a class="anchor-link" href="#detalleOrdenTarima"
+              title="Permalink to detalleOrdenTarima">#</a></h4>
+<div class="doc">
+<pre class="source">
+void detalleOrdenTarima(){
+ 
+ var pUrl = "http://localhost:8031/rest/ordenp/obtener_detalle_mp_ordenp_agrupado/${IdOrden}";
+ print(pUrl);
+ 
+ ListaDetalleTarima.clear();
+ 
+ HttpRequest.getString(pUrl).then((String Data){
+   
+   print(Data);
+   
+   List pLista = JSON.decode(Data);
+   
+   print("limpiando lista");
+   
+   TableElement tableDetalleTarima = querySelector("#tableDetalleTarima");
+   tableDetalleTarima.tBodies[0].children.clear();
+   
+   for (Map item in pLista){
+       var pDetalleTarima = new DetalleMPTarima.fromMAP(item);
+       ListaDetalleTarima.add(pDetalleTarima);
+       agregarFilaDetalleTarima(pDetalleTarima);
+   }
+   
+   print(ListaDetalleTarima.length);
+   
+   ModalP.modal("divDetalleTarima");
+ });
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="agregarFilaDetalleTarima">
+<button class="show-code">Code</button>
+void <strong>agregarFilaDetalleTarima</strong>(<a href="DetalleMP/DetalleMPTarima.html">DetalleMPTarima</a> item) <a class="anchor-link" href="#agregarFilaDetalleTarima"
+              title="Permalink to agregarFilaDetalleTarima">#</a></h4>
+<div class="doc">
+<pre class="source">
+void agregarFilaDetalleTarima(DetalleMPTarima item){
+   
+  TableElement tableDetalleTarima = querySelector("#tableDetalleTarima");
+  TableRowElement tr = new TableRowElement();
+  
+  TableCellElement td = new TableCellElement()..text = item.tarimaOrigen.toString()..style.textAlign = "center";
+  tr.children.add(td);
+  
+  AnchorElement anchorCajas = new Element.html("&lt;a href=\"#\"&gt;${item.cajas.toString()}&lt;/a&gt;");
+  
+  anchorCajas.onClick.listen((_){
+     detalladoTarima(item.tarimaOrigen);
+  });
+  
+  td = new TableCellElement()..children.add(anchorCajas)..style.textAlign = "right";
+  tr.children.add(td);
+  td = new TableCellElement()..text = new intl.NumberFormat("#,##0.00").format(item.kilos)..style.textAlign = "right";
+  tr.children.add(td);
+  
+  tableDetalleTarima.tBodies[0].children.add(tr);
+ 
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="detalladoTarima">
+<button class="show-code">Code</button>
+void <strong>detalladoTarima</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> ATarima) <a class="anchor-link" href="#detalladoTarima"
+              title="Permalink to detalladoTarima">#</a></h4>
+<div class="doc">
+<pre class="source">
+void detalladoTarima(int ATarima){
+ 
+ var pUrl = "http://localhost:8031/rest/ordenp/obtener_detalle_mp_ordenp_tarima/${IdOrden}/${ATarima.toString()}";
+ print(pUrl);
+ 
+ HttpRequest.getString(pUrl).then((String Data){
+   
+   print(Data);
+   
+   List pLista = JSON.decode(Data);
+   
+   ListaDetalle.clear();
+   
+   TableElement tablaDetalladoTarima = querySelector("#tablaDetalladoTarima");
+   tablaDetalladoTarima.tBodies[0].children.clear();
+   
+   for (Map item in pLista){
+       DetalleMP pItem = new DetalleMP.fromMAP(item);
+       ListaDetalle.add(pItem);
+       agregarFilaDetalladoTarima(pItem);
+   }
+   
+   document.querySelector("#divDetalladoTarima").classes.toggle("oculto");
+ });
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="agregarFilaDetalladoTarima">
+<button class="show-code">Code</button>
+void <strong>agregarFilaDetalladoTarima</strong>(<a href="DetalleMP/DetalleMP.html">DetalleMP</a> item) <a class="anchor-link" href="#agregarFilaDetalladoTarima"
+              title="Permalink to agregarFilaDetalladoTarima">#</a></h4>
+<div class="doc">
+<pre class="source">
+void agregarFilaDetalladoTarima(DetalleMP item){
+ 
+   TableElement tablaDetalladoTarima = querySelector("#tablaDetalladoTarima");
+   TableRowElement tr = new TableRowElement();
+   
+   TableCellElement td = new TableCellElement()..text = item.tarimaOrigen.toString()..style.textAlign = "center";
+   tr.children.add(td);
+   td = new TableCellElement()..text = item.producto..style.textAlign = "center";
+   tr.children.add(td);
+   td = new TableCellElement()..text = item.codigoBarras..style.textAlign = "center";
+   tr.children.add(td);
+   td = new TableCellElement()..text = new intl.NumberFormat("#,##0.00").format(item.peso)..style.textAlign = "right";
+   tr.children.add(td);
+   
+   tablaDetalladoTarima.tBodies[0].children.add(tr);
+ 
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="costoMaquila">
+<button class="show-code">Code</button>
+void <strong>costoMaquila</strong>(<a href="LibOrdenProduccion/Produccion.html">Produccion</a> AProduccion) <a class="anchor-link" href="#costoMaquila"
+              title="Permalink to costoMaquila">#</a></h4>
+<div class="doc">
+<pre class="source">
+void costoMaquila(Produccion AProduccion){
+ 
+ if (!editable){
+    window.alert("No tiene derecho a modificar");
+    return;
+ }
+ 
+ ModalP.modal("mdlCostoMaquila");
+ document.querySelector("#mCostoMaquila").value = new intl.NumberFormat("###,0.00").format(AProduccion.costo_maquila);
+ (document.querySelector("#mCostoMaquila") as InputElement).select();
+ document.querySelector("#mCostoMaquila").focus();
+   
+ bool pError = false;
+ 
+ ButtonElement btnElement =  document.querySelector("#btnCostoMaquilaAceptar");
+ 
+ if (EventoCostoMaquila != null){
+   EventoCostoMaquila.cancel();
+ }
+ 
+ EventoCostoMaquila = btnElement.onClick.listen((_){
+     AProduccion.costo_maquila = double.parse(document.querySelector("#mCostoMaquila").value, (_){
+         window.alert("El costo de la maquila no es válido");
+         document.querySelector("#mCostoMaquila").focus();
+         pError = true;
+     });
+     
+     if (!pError){
+       
+       AProduccion.importe_maquila = AProduccion.producido * AProduccion.costo_maquila;
+       
+       String pUrl = "http://localhost:8031/rest/ordenp/actualizar_costo_maquila/" + AProduccion.id.toString();
+       String pData = '{"costo":' + AProduccion.costo_maquila.toString() + ',"importe":' + AProduccion.importe_maquila.toString() + '}';
+       Map&lt;String, String&gt; headers = new Map&lt;String, String&gt;();
+       headers["content-type"] = "application/x-www-form-urlencoded";
+       
+       HttpRequest.request(pUrl, method: "POST", responseType: "application/json", sendData: pData, requestHeaders: headers).then((HttpRequest ARequest){
+         
+         double pTotalCosto   = 0.0;
+         double pTotalImporte = 0.0;
+         
+         for (Produccion item in ListaProduccion){
+           pTotalCosto   += item.costo_maquila;
+           pTotalImporte += item.importe_maquila;
+         }
+         
+         document.querySelector("#TotalCostoMaquila").innerHtml   = new intl.NumberFormat("###,0.00").format(pTotalCosto);
+         document.querySelector("#TotalImporteMaquila").innerHtml = new intl.NumberFormat("###,0.00").format(pTotalImporte);
+         
+         ModalP.cierra_modal("mdlCostoMaquila");
+         
+         actualizaFilaProduccion(AProduccion);
+         
+       });
+         
+     }
+     
+ });
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="detalleProducido">
+<button class="show-code">Code</button>
+void <strong>detalleProducido</strong>(<a href="LibOrdenProduccion/Produccion.html">Produccion</a> AProduccion) <a class="anchor-link" href="#detalleProducido"
+              title="Permalink to detalleProducido">#</a></h4>
+<div class="doc">
+<pre class="source">
+void detalleProducido(Produccion AProduccion){
+
+	var pUrl = "http://localhost:8031/tabla_detalle_producto_orden/${IdOrden}/${AProduccion.clave_producto}"; 
+
+	HttpRequest.getString(pUrl).then((String Data){
+	
+		document.querySelector("#divDetalleProducido").innerHtml = Data;
+	
+	}).then((String Data) =&gt; (ModalP.modal("mdlDetalleProducido")));
+
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="detalleOrden">
+<button class="show-code">Code</button>
+void <strong>detalleOrden</strong>(<a href="OrdenPP/OrdenMP.html">OrdenMP</a> AOrdenMP) <a class="anchor-link" href="#detalleOrden"
+              title="Permalink to detalleOrden">#</a></h4>
+<div class="doc">
+<pre class="source">
+void detalleOrden(OrdenMP AOrdenMP){
+ 
+ if (!editable){
+   window.alert("No tiene derecho a modificar");
+   return;
+ }
+ 
+ 
+ ModalP.modal("mdlAgregarCosto");
+ 
+ 
+ document.querySelector("#mCosto").value = new intl.NumberFormat("###,0.00").format(AOrdenMP.costo_salida);
+ (document.querySelector("#mCosto") as InputElement).select();
+ document.querySelector("#mCosto").focus();
+   
+ bool pError = false;
+ 
+ ButtonElement btnElement =  document.querySelector("#btnCostoAceptar");
+ 
+ if (EventoCostoSalida != null){
+   EventoCostoSalida.cancel();
+ }
+ 
+ EventoCostoSalida = btnElement.onClick.listen((_){
+     AOrdenMP.costo_salida = double.parse((querySelector("#mCosto") as InputElement).value, (_){
+         window.alert("El costo no es válido");
+         document.querySelector("#mCosto").focus();
+         pError = true;
+     });
+     
+     if (!pError){
+       
+       AOrdenMP.importe_salida = AOrdenMP.surtido * AOrdenMP.costo_salida;
+       
+       String pUrl = "http://localhost:8031/rest/ordenp/actualizar_costo_salida/" + AOrdenMP.id.toString();
+       String pData = '{"costo":' + AOrdenMP.costo_salida.toString() + ',"importe":' + AOrdenMP.importe_salida.toString() + '}';
+       Map&lt;String, String&gt; headers = new Map&lt;String, String&gt;();
+       headers["content-type"] = "application/x-www-form-urlencoded";
+       
+       HttpRequest.request(pUrl, method: "POST", responseType: "application/json", sendData: pData, requestHeaders: headers).then((HttpRequest ARequest){
+         
+           actualizaFilaMPrima(AOrdenMP);
+         
+           double pTotalCosto   = 0.0;
+           double pTotalImporte = 0.0;
+           
+           for (OrdenMP item in ListaOrdenPMP){
+               pTotalCosto   += item.costo_salida;
+               pTotalImporte += item.importe_salida;
+           }
+ 
+           document.querySelector("#TotalCostoP").innerHtml = new intl.NumberFormat("###,0.00").format(pTotalCosto);
+           document.querySelector("#TotalImporteP").innerHtml = new intl.NumberFormat("###,0.00").format(pTotalImporte);
+           
+           ModalP.cierra_modal("mdlAgregarCosto");
+         
+       });        
+         
+     }
+     
+ });
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="despliega_producto_mp">
+<button class="show-code">Code</button>
+void <strong>despliega_producto_mp</strong>() <a class="anchor-link" href="#despliega_producto_mp"
+              title="Permalink to despliega_producto_mp">#</a></h4>
+<div class="doc">
+<pre class="source">
+void despliega_producto_mp(){
+ 
+ String pProducto = document.querySelector("#mClave").value;
+ String pUrl = "http://localhost:8031/rest/productos/obtener_descripcion/${pProducto}";
+ 
+ HttpRequest.getString(pUrl).then((data){
+   
+   var pMap = JSON.decode(data);
+   
+   String pCodigo = pMap["clave"];
+   
+   if (pMap["clave"] != "0"){
+     document.querySelector("#mDescripcion").value = pMap["descripcion"];
+   }
+   else{
+     window.alert("No existe el producto");
+     document.querySelector("#mClave").focus();
+   }
+     
+ });
+ 
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="despliega_salida">
+<button class="show-code">Code</button>
+void <strong>despliega_salida</strong>() <a class="anchor-link" href="#despliega_salida"
+              title="Permalink to despliega_salida">#</a></h4>
+<div class="doc">
+<pre class="source">
+void despliega_salida(){
+ 
+ String pSalida = document.querySelector("#pClave").value;
+ String pUrl = "http://localhost:8031/embarques/obtener_salida/${pSalida}";
+ 
+ HttpRequest.getString(pUrl).then((data){
+   
+   var pMap = JSON.decode(data);
+   
+   if (pMap["codigo"] != "0"){
+     
+     
+     (document.querySelector("#pDescripcion") as InputElement).value = pMap["concepto"];
+     document.querySelector("#pKilos").value       = new intl.NumberFormat("###0.00").format(pMap["kilos"]);
+   }
+   else{
+     window.alert("No existe la salida");
+     document.querySelector("#pClave").focus();
+   }
+ });
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="eliminar_produccion">
+<button class="show-code">Code</button>
+void <strong>eliminar_produccion</strong>(item) <a class="anchor-link" href="#eliminar_produccion"
+              title="Permalink to eliminar_produccion">#</a></h4>
+<div class="doc">
+<pre class="source">
+void eliminar_produccion(item){
+ 
+ if (window.confirm("¿Eliminar Producción?")){
+   ListaOrdenPMP.remove(item);
+ }
+ 
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="seleccionar_salida">
+<button class="show-code">Code</button>
+void <strong>seleccionar_salida</strong>() <a class="anchor-link" href="#seleccionar_salida"
+              title="Permalink to seleccionar_salida">#</a></h4>
+<div class="doc">
+<pre class="source">
+void seleccionar_salida(){
+ 
+ OrdenMP pOrdenPP = new OrdenMP(); 
+ 
+ pOrdenPP.producto    = querySelector("#pClave").value;
+ pOrdenPP.descripcion = querySelector("#pDescripcion").value;
+ pOrdenPP.kilos       = double.parse(querySelector("#pKilos").value);
+ 
+ if (pOrdenPP.descripcion.trim().length == 0){
+   window.alert("El producto no es válido");
+   querySelector("#pClave").focus();
+   return;
+ }
+ 
+ if (pOrdenPP.kilos &lt;= 0){
+   window.alert("Los kilos no son válidos");
+   querySelector("#pKilos").focus();
+   return;
+ }
+
+ FolioSalida = querySelector("#pClave").value;
+ 
+ querySelector("#pClave").value       = "";
+ querySelector("#pDescripcion").value = "";
+ querySelector("#pKilos").value       = "0.0";
+ 
+ document.querySelector("#mdlAgregarProductos").xtag.hide();
+ 
+ String pUrl = "http://localhost:8031/embarques/obtener_detalle_productos_salida/${FolioSalida}";
+ 
+ HttpRequest.getString(pUrl).then((String Data){
+   
+   var pLista = JSON.decode(Data);
+   
+   for(var item in pLista){
+     OrdenMP pOrdenMp = ListaOrdenPMP.where((OrdenMP x) =&gt; x.producto == item["producto"]).toList()[0];
+     
+     if (pOrdenMp != null){
+       pOrdenMp.surtido = item["kilos"];
+     }
+   }
+ });
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="GuardaValorRescate">
+<button class="show-code">Code</button>
+void <strong>GuardaValorRescate</strong>() <a class="anchor-link" href="#GuardaValorRescate"
+              title="Permalink to GuardaValorRescate">#</a></h4>
+<div class="doc">
+<pre class="source">
+void GuardaValorRescate(){
+ 
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="capturaValorRescate">
+<button class="show-code">Code</button>
+void <strong>capturaValorRescate</strong>(<a href="LibOrdenProduccion/Produccion.html">Produccion</a> item) <a class="anchor-link" href="#capturaValorRescate"
+              title="Permalink to capturaValorRescate">#</a></h4>
+<div class="doc">
+<pre class="source">
+void capturaValorRescate(Produccion item){
+ 
+ if (!editable){
+   window.alert("No tiene derecho a modificar");
+   return;
+ } 
+ 
+  ModalP.modal("mdlValorRescate");
+  document.querySelector("#inpValorRescate").focus();
+  
+  ButtonElement btnElement =  document.querySelector("#btnValorRescateAceptar");
+  
+  if (EventoValorRescate != null){
+     EventoValorRescate.cancel();
+  }
+  
+  btnElement.onClick.listen((_){
+    
+     var pUrl  = "http://localhost:8031/rest/ordenp/actualiza_valor_rescate";
+     Map pMap = new Map();
+     
+     double pValorRescate = 0.0;
+     
+     try{
+       pValorRescate = double.parse((querySelector("#inpValorRescate") as InputElement).value);
+     }
+     catch(Exception){
+       pValorRescate = -1.0;
+     }
+     
+     if (pValorRescate &lt; 0){
+       window.alert("Valor de rescato no es válido");
+       (querySelector("#inpValorRescate") as InputElement).focus();
+       return;
+     }
+     
+     pMap["valor_rescate"] = pValorRescate.toDouble();
+     pMap["id_orden"] = item.id;
+     
+     String pData = JSON.encode(pMap);
+     
+     HttpRequest.request(pUrl, method: "POST", sendData: pData).then((HttpRequest ARequest){
+       
+         item.valor_rescate = pValorRescate;
+         item.importe_rescate = pValorRescate * item.producido;
+         ModalP.cierra_modal("mdlValorRescate");
+         actualizaFilaProduccion(item);
+       
+     });
+     
+    
+  });
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="cancelar">
+<button class="show-code">Code</button>
+void <strong>cancelar</strong>() <a class="anchor-link" href="#cancelar"
+              title="Permalink to cancelar">#</a></h4>
+<div class="doc">
+<pre class="source">
+void cancelar(){
+ if (window.confirm("¿Cancelar captura?")){
+   
+   String pFecha = "";
+   List&lt;String&gt; pLista = window.location.search.split("&amp;");
+   pLista = pLista[1].split("=");
+   pFecha = pLista[1];
+   
+   window.location.href = "/ordenes_produccion?fecha=${pFecha}";
+ }
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="guardar">
+<button class="show-code">Code</button>
+void <strong>guardar</strong>() <a class="anchor-link" href="#guardar"
+              title="Permalink to guardar">#</a></h4>
+<div class="doc">
+<pre class="source">
+void guardar(){
+ 
+ String pFecha = "";
+ List&lt;String&gt; pLista = window.location.search.split("&amp;");
+ pLista = pLista[1].split("=");
+ pFecha = pLista[1];
+ 
+ if (POrdenProduccion.estado == "Surtido"){
+     cerrarOrdenProduccion();      
+ }
+ else if (POrdenProduccion.estado == "Cerrado"){
+     abrirOrdenProduccion();
+ }
+ else{
+     if (window.confirm("¿Crear salida para orden de producción?")){
+       Map pParametros = new Map();
+       pParametros["id_usuario_embarques"] = document.querySelector("#id_usuario_embarques").value;
+       pParametros["id_salida_embarques"]  = FolioSalida;
+       
+       String pData    = json.stringify(pParametros);
+       String pUrl     = 'http://localhost:8031/rest/ordenp/ordenmp_surtir/${IdOrden}';
+       print(pUrl);
+       Map&lt;String, String&gt; headers = new Map&lt;String, String&gt;();
+       headers["content-type"] = "application/json";
+       
+       HttpRequest.request(pUrl, method: "PUT", requestHeaders:  headers , sendData:  pData).then((HttpRequest request){
+         print(request.responseText);
+         Map pResult = JSON.decode(request.responseText);
+         print(pResult['result'].toString());
+         if (pResult['result'] == 0){
+           window.alert("Se genero la salida ${pResult['salida'].toString()}");
+           window.location.href = "/ordenes_produccion?fecha=${pFecha}";
+         }
+         else{
+           print(pResult['mensaje'].toString());
+           window.alert(pResult['mensaje'].toString());
+         }
+             
+        }).then((request){
+           //window.alert("Se guardo orden de producción");
+          // window.location.href = "/ordenes_produccion";
+        });
+     }
+ } 
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="abrirOrdenProduccion">
+<button class="show-code">Code</button>
+void <strong>abrirOrdenProduccion</strong>() <a class="anchor-link" href="#abrirOrdenProduccion"
+              title="Permalink to abrirOrdenProduccion">#</a></h4>
+<div class="doc">
+<pre class="source">
+void abrirOrdenProduccion(){
+ 
+ if (window.confirm("¿Abrir la orden de producción?")){
+     Map pParametros = new Map();
+   
+     String pData    = json.stringify(pParametros);
+     String pUrl     = 'http://localhost:8031/rest/ordenp/ordenmp_abrir/${IdOrden}';
+     print(pUrl);
+     Map&lt;String, String&gt; headers = new Map&lt;String, String&gt;();
+     headers["content-type"] = "application/json";
+     
+     HttpRequest.request(pUrl, method: "PUT", requestHeaders:  headers , sendData:  pData).then((HttpRequest request){
+       print(request.responseText);
+       Map pResult = JSON.decode(request.responseText);
+       print(pResult['result'].toString());
+       if (pResult['result'] == 0){
+           window.alert("Se abrió con éxito");
+           String pFecha = "";
+           List&lt;String&gt; pLista = window.location.search.split("&amp;");
+           pLista = pLista[1].split("=");
+           pFecha = pLista[1];
+           window.location.href = "/ordenes_produccion?fecha=${pFecha}";
+       }
+       else{
+           print(pResult['mensaje'].toString());
+           window.alert(pResult['mensaje'].toString());
+       }
+     });
+ }
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="cerrarOrdenProduccion">
+<button class="show-code">Code</button>
+void <strong>cerrarOrdenProduccion</strong>() <a class="anchor-link" href="#cerrarOrdenProduccion"
+              title="Permalink to cerrarOrdenProduccion">#</a></h4>
+<div class="doc">
+<pre class="source">
+void cerrarOrdenProduccion(){
+ 
+ if (window.confirm("¿Cerrar la orden de producción?")){
+   Map pParametros = new Map();
+ 
+   String pData    = json.stringify(pParametros);
+   String pUrl     = 'http://localhost:8031/rest/ordenp/ordenmp_cerrar/${IdOrden}';
+   print(pUrl);
+   Map&lt;String, String&gt; headers = new Map&lt;String, String&gt;();
+   headers["content-type"] = "application/json";
+   
+   HttpRequest.request(pUrl, method: "PUT", requestHeaders:  headers , sendData:  pData).then((HttpRequest request){
+     print(request.responseText);
+     Map pResult = JSON.decode(request.responseText);
+     print(pResult['result'].toString());
+     if (pResult['result'] == 0){
+         window.alert("Se cerro con éxito");
+         
+         String pFecha = "";
+         List&lt;String&gt; pLista = window.location.search.split("&amp;");
+         pLista = pLista[1].split("=");
+         pFecha = pLista[1];
+         
+         window.location.href = "/ordenes_produccion?fecha=${pFecha}";
+     }
+     else{
+         print(pResult['mensaje'].toString());
+         window.alert(pResult['mensaje'].toString());
+     }
+   });
+ }
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="desprogramaOrdenProduccion">
+<button class="show-code">Code</button>
+void <strong>desprogramaOrdenProduccion</strong>() <a class="anchor-link" href="#desprogramaOrdenProduccion"
+              title="Permalink to desprogramaOrdenProduccion">#</a></h4>
+<div class="doc">
+<pre class="source">
+void desprogramaOrdenProduccion(){
+ 
+ if (window.confirm("¿Desprogramar la orden de producción?") == false){
+   return;
+ }
+ 
+ Map pParametros = new Map();
+
+ String pProductos = "";
+ for (OrdenMP item in ListaOrdenPP){
+   pProductos += "${item.producto},";
+ }
+ 
+ pProductos = pProductos.substring(0, pProductos.length - 1);
+ 
+ var pUrl = 'http://localhost:8031/rest/ordenp/desprogramar_orden';
+ String pData = "id_orden=${POrdenProduccion.id.toString()}&amp;id_programacion=${POrdenProduccion.id_programacion.toString()}";
+ print(pData);
+ 
+ Map&lt;String, String&gt; headers = new Map&lt;String, String&gt;();
+ headers["content-type"] = "application/x-www-form-urlencoded";
+ 
+ HttpRequest.request(pUrl, method: "POST", responseType: "application/json", sendData: pData, requestHeaders: headers).then((HttpRequest ARequest){
+   
+   print(ARequest.responseText);
+   Map pResult = JSON.decode(ARequest.responseText);
+   
+   if (pResult["id"] == 0){
+     window.alert(pResult["mensaje"]);
+   }
+   else{
+     POrdenProduccion.estado            = "Surtido";
+     document.querySelector("#spanEstado").text = "Surtido";
+     document.querySelector("#btnSalida").text = "Programar";
+     window.alert("Se desprogramo la orden con éxito"); 
+   }
+ });
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="programaOrdenProduccion">
+<button class="show-code">Code</button>
+void <strong>programaOrdenProduccion</strong>() <a class="anchor-link" href="#programaOrdenProduccion"
+              title="Permalink to programaOrdenProduccion">#</a></h4>
+<div class="doc">
+<pre class="source">
+void programaOrdenProduccion(){
+ 
+   if (window.confirm("¿Programar la orden de producción?") == false){
+       return;
+   }
+ 
+   Map pParametros = new Map();
+
+   String pProductos = "";
+   for (OrdenMP item in ListaOrdenPP){
+       pProductos += "${item.producto},";
+   }
+   
+   pProductos = pProductos.substring(0, pProductos.length - 1);
+   
+   var pUrl = 'http://localhost:8031/rest/ordenp/programar_orden';
+   String pData = "lote=${POrdenProduccion.lote_produccion.toString()}&amp;productos=${pProductos}&amp;fecha=${POrdenProduccion.fecha}&amp;id_orden=${POrdenProduccion.id.toString()}&amp;id_usuario=${document.querySelector("#id_usuario").value}";
+   print(pData);
+   
+   Map&lt;String, String&gt; headers = new Map&lt;String, String&gt;();
+   headers["content-type"] = "application/x-www-form-urlencoded";
+   
+   HttpRequest.request(pUrl, method: "POST", responseType: "application/json", sendData: pData, requestHeaders: headers).then((HttpRequest ARequest){
+     
+       print(ARequest.responseText);
+       Map pResult = JSON.decode(ARequest.responseText);
+       
+       if (pResult["id"] == 0){
+           window.alert(pResult["mensaje"]);
+       }
+       else{
+           POrdenProduccion.estado            = "Programado";
+           POrdenProduccion.id_programacion   = pResult["id"];
+           document.querySelector("#spanEstado").text = "Programado";
+           document.querySelector("#btnSalida").text = "DesProgramar";
+           window.alert("Se programo la orden con éxito"); 
+       }
+   });
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="ObtenerEntidad">
+<button class="show-code">Code</button>
+<a href="LibOrdenProduccion/OrdenProduccion.html">OrdenProduccion</a> <strong>ObtenerEntidad</strong>() <a class="anchor-link" href="#ObtenerEntidad"
+              title="Permalink to ObtenerEntidad">#</a></h4>
+<div class="doc">
+<pre class="source">
+OrdenProduccion ObtenerEntidad(){
+ OrdenProduccion pOrdenProduccion = new OrdenProduccion();
+ pOrdenProduccion.id              = int.parse(document.querySelector("#id").value);
+ pOrdenProduccion.id_usuario      = int.parse(document.querySelector("#id_usuario").value);
+ print("id_usuario: ${pOrdenProduccion.id_usuario}");
+ pOrdenProduccion.id_tipo         = int.parse(document.querySelector("#id_tipo").value);
+ pOrdenProduccion.descripcion     = document.querySelector("#id_orden").value;
+ pOrdenProduccion.fecha           = document.querySelector("#fecha").value;
+ pOrdenProduccion.lote_produccion = document.querySelector("#lote_produccion").value;
+ pOrdenProduccion.estado          = document.querySelector("#spanEstado").text;
+ 
+ return pOrdenProduccion;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="DespliegaEntidad">
+<button class="show-code">Code</button>
+void <strong>DespliegaEntidad</strong>(<a href="LibOrdenProduccion/OrdenProduccion.html">OrdenProduccion</a> AOrdenProduccion) <a class="anchor-link" href="#DespliegaEntidad"
+              title="Permalink to DespliegaEntidad">#</a></h4>
+<div class="doc">
+<pre class="source">
+void DespliegaEntidad(OrdenProduccion AOrdenProduccion){
+   (document.querySelector("#spanId") as SpanElement).text            = AOrdenProduccion.id.toString();
+   (document.querySelector("#id_orden")  as InputElement).value       = AOrdenProduccion.descripcion;
+   (document.querySelector("#fecha") as InputElement).value           = AOrdenProduccion.fecha;
+   (document.querySelector("#lote_produccion") as InputElement).value = AOrdenProduccion.lote_produccion.toString();
+   (document.querySelector("#spanEstado") as SpanElement).text        = AOrdenProduccion.estado;
+   (document.querySelector("#spanFolioSalida") as SpanElement).text   = ",Salida: ${AOrdenProduccion.id_salida}";
+ 
+  if (AOrdenProduccion.estado == "Surtido"){
+     document.querySelector("#btnSalida").text = "Cerrar";
+  }
+  
+  if (AOrdenProduccion.estado == "Cerrado"){
+    document.querySelector("#btnSalida").text = "Abrir";
+    
+    (document.querySelector("#btnGeneraSalida") as ButtonElement).classes.remove("hiden");
+  }
+  
+  if (AOrdenProduccion.estado == "Generado" || AOrdenProduccion.estado == "Finalizado"){
+    (document.querySelector("#btnSalida") as ButtonElement).classes.add("hiden");
+  }
+  
+  if (AOrdenProduccion.estado == "Generado" || AOrdenProduccion.estado == "Finalizado"){
+  	(document.querySelector("#btnSalida") as ButtonElement).classes.add("hiden");
+  }
+  
+  if (AOrdenProduccion.estado == "Generado"){
+ 	(document.querySelector("#btnEntrada") as ButtonElement).classes.remove("hiden");
+  }
+  
+  if (!editable){
+     ocultaBotones();
+  }
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="ocultaBotones">
+<button class="show-code">Code</button>
+void <strong>ocultaBotones</strong>() <a class="anchor-link" href="#ocultaBotones"
+              title="Permalink to ocultaBotones">#</a></h4>
+<div class="doc">
+<pre class="source">
+void ocultaBotones(){
+ document.querySelector("#btnSalida").style.display = "none";
+ document.querySelector("#btnGeneraSalida").style.display = "none";
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="ObtenerOrdenProduccion">
+<button class="show-code">Code</button>
+void <strong>ObtenerOrdenProduccion</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> AId) <a class="anchor-link" href="#ObtenerOrdenProduccion"
+              title="Permalink to ObtenerOrdenProduccion">#</a></h4>
+<div class="doc">
+<pre class="source">
+void ObtenerOrdenProduccion(String AId){
+ IdOrden = AId;
+ String pUrl = 'http://localhost:8031/rest/ordenp/OrdenProduccion_obtener/${AId}';
+ 
+ HttpRequest.getString(pUrl, onProgress: null).then((data){
+       POrdenProduccion = new OrdenProduccion.FromJSON(data);
+       
+       DespliegaEntidad(POrdenProduccion);
+       print(POrdenProduccion.estado);
+   }).then((String Data) {
+     
+       String pUrl = 'http://localhost:8031/rest/ordenp/ordenmp_obtener_lista/${POrdenProduccion.id.toString()}';
+       HttpRequest.getString(pUrl, onProgress: null).then((String Data){
+         
+       var pLista = JSON.decode(Data);
+       double pTotalKilos   = 0.0;
+       double pTotalSurtido = 0.0;
+       double pTotalCosto   = 0.0;
+       double pTotalImporte = 0.0;
+				
+       for (var item in pLista){
+	        var pOdenMP = new OrdenMP.FromMap(item);
+	        ListaOrdenPMP.add(pOdenMP);
+	        
+           agregaFilaMPrima(pOdenMP);	        
+	        
+	        pTotalKilos   += pOdenMP.kilos;
+	        pTotalSurtido += pOdenMP.surtido;
+	        pTotalCosto   += pOdenMP.costo_salida;
+	        pTotalImporte += pOdenMP.importe_salida;
+       }
+       
+       SurtidoTotal = pTotalSurtido;
+       
+       document.querySelector("#TotalKilosP").innerHtml   = new intl.NumberFormat("#,##0.00").format(pTotalKilos);
+       document.querySelector("#TotalSurtidoP").innerHtml = new intl.NumberFormat("#,##0.00").format(pTotalSurtido);
+       document.querySelector("#TotalCostoP").innerHtml   = "";//new intl.NumberFormat("#,##0.00").format();
+       document.querySelector("#TotalImporteP").innerHtml = new intl.NumberFormat("#,##0.00").format(POrdenProduccion.costo_salida);
+       
+       String pUrl = 'http://localhost:8031/rest/ordenp/ordenpp_obtener_lista/${POrdenProduccion.id.toString()}';
+       print("..w..${pUrl}");
+       return HttpRequest.getString(pUrl);
+     }).then((String Data){
+       
+       var pLista = JSON.decode(Data);
+       
+       for (var item in pLista){
+           OrdenMP pItem = new OrdenMP.FromMap(item);
+           ListaOrdenPP.add(pItem);
+           
+       }
+       
+     }).then((String Data){
+       HttpRequest.getString(pUrl, onProgress: null).then((String Data) {
+             print("-------------------------------------------------------------------------");
+             print(Data);
+             DespliegaEntidad(POrdenProduccion);
+         });         
+     });
+   }).then((String Data){
+ 
+         pUrl = 'http://localhost:8031/rest/ordenp/obtener_producido_orden/${AId}';
+         
+         HttpRequest.getString(pUrl).then((String Data){
+             print("Producido");
+             print(Data);
+             List pLista = JSON.decode(Data);
+             
+             double pTotalProgramado     = 0.0;
+             double pTotalProducido      = 0.0;
+             double pTotalCajas          = 0.0;
+             double pTotalCostoMaquila   = 0.0;
+             double pTotalImporteMaquila = 0.0;
+             double pTotalValorRescate   = 0.0;
+             double pTotalImporteRescate = 0.0;
+             
+             for (Map item in pLista){
+                 var pProduccion = new Produccion.fromMap(item);
+                 ListaProduccion.add(pProduccion);
+                 agregaFilaProducido(pProduccion);
+                 pTotalProgramado     += pProduccion.programado;
+                 pTotalProducido      += pProduccion.producido;
+                 pTotalCajas          += pProduccion.cajas;
+                 pTotalCostoMaquila   += pProduccion.costo_maquila;
+                 pTotalImporteMaquila += pProduccion.importe_maquila;
+                 pTotalValorRescate   += pProduccion.valor_rescate;
+                 pTotalImporteRescate += pProduccion.importe_rescate;
+             }
+             
+             document.querySelector("#TotalProgramado").innerHtml      = new intl.NumberFormat("#,##0.00").format(pTotalProgramado);
+             document.querySelector("#TotalProducido").innerHtml       = new intl.NumberFormat("#,##0.00").format(pTotalProducido);
+             document.querySelector("#TotalCajas").innerHtml           = pTotalCajas.toString();
+             document.querySelector("#TotalCostoMaquila").innerHtml    = new intl.NumberFormat("#,##0.00").format(pTotalCostoMaquila);
+             document.querySelector("#TotalImporteMaquila").innerHtml  = new intl.NumberFormat("#,##0.00").format(pTotalImporteMaquila);
+             document.querySelector("#TotalValorRescate").innerHtml    = new intl.NumberFormat("#,##0.00").format(pTotalValorRescate);
+             document.querySelector("#TotalImporteRescate").innerHtml  = new intl.NumberFormat("#,##0.00").format(pTotalImporteRescate);
+             
+             for (Produccion item in ListaProduccion){
+                 try
+                 {
+                      item.porcentaje = (item.producido / SurtidoTotal) * 100;
+                 }
+                 catch(ex){
+                     item.porcentaje = 0.0;
+                 }
+             }
+             
+         });
+       });
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="actualizaFilaProduccion">
+<button class="show-code">Code</button>
+void <strong>actualizaFilaProduccion</strong>(<a href="LibOrdenProduccion/Produccion.html">Produccion</a> item) <a class="anchor-link" href="#actualizaFilaProduccion"
+              title="Permalink to actualizaFilaProduccion">#</a></h4>
+<div class="doc">
+<pre class="source">
+void actualizaFilaProduccion(Produccion item){
+ (querySelector("#pp_costo_maquila${item.id}") as TableCellElement).text = new intl.NumberFormat("#,##0.00").format(item.costo_maquila);
+ (querySelector("#pp_importe_maquila${item.id}") as TableCellElement).text = new intl.NumberFormat("#,##0.00").format(item.importe_maquila);
+ TableCellElement pCellValorRescate = (querySelector("#pp_valor_rescate${item.id}") as TableCellElement);
+ (pCellValorRescate.children[0] as AnchorElement).text = new intl.NumberFormat("#,##0.00").format(item.valor_rescate);
+ (querySelector("#pp_importe_rescate${item.id}") as TableCellElement).text = new intl.NumberFormat("#,##0.00").format(item.importe_rescate);
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="agregaFilaProducido">
+<button class="show-code">Code</button>
+void <strong>agregaFilaProducido</strong>(<a href="LibOrdenProduccion/Produccion.html">Produccion</a> item) <a class="anchor-link" href="#agregaFilaProducido"
+              title="Permalink to agregaFilaProducido">#</a></h4>
+<div class="doc">
+<pre class="source">
+void agregaFilaProducido(Produccion item){
+ 
+ TableElement tableMP = querySelector("#tablaProducido");
+ 
+ TableRowElement tr = new TableRowElement()..id = item.id.toString();
+ 
+ TableCellElement td = new TableCellElement()..text = item.factura.toString();
+ tr.children.add(td);
+ td = new TableCellElement()..text = item.clave_producto;
+ tr.children.add(td);
+ td = new TableCellElement()..text = item.codigosap;
+ tr.children.add(td);
+ td = new TableCellElement()..text = item.nombre_producto;
+ tr.children.add(td);
+ td = new TableCellElement()..text = new intl.NumberFormat("#,##0.00").format(item.programado)..style.textAlign = "right";
+ tr.children.add(td);
+ td = new TableCellElement()..text = new intl.NumberFormat("#,##0.00").format(item.producido)..style.textAlign = "right";
+ tr.children.add(td);
+ td = new TableCellElement()..text = new intl.NumberFormat("#,##0.00").format(item.porcentaje)..style.textAlign = "right";
+ tr.children.add(td);
+ 
+ AnchorElement pCajas = new Element.html("&lt;a href=\"#\"&gt;${item.cajas}&lt;/a&gt;");
+ 
+ pCajas.onClick.listen((_){
+   
+   detalleProducido(item);
+   
+ });
+ 
+ td = new TableCellElement()..style.textAlign = "right"..id = "pp_cajas${item.id}"..children.add(pCajas);
+ tr.children.add(td);
+ td = new TableCellElement()..text = new intl.NumberFormat("#,##0.00").format(item.costo_maquila)..style.textAlign = "right"..id = "pp_costo_maquila${item.id}";
+ tr.children.add(td);
+ td = new TableCellElement()..text = new intl.NumberFormat("#,##0.00").format(item.importe_maquila)..style.textAlign = "right"..id = "pp_importe_maquila${item.id}";
+ tr.children.add(td);
+ AnchorElement pValorRescate = new Element.html("&lt;a href=\"#\"&gt;${new intl.NumberFormat("#,##0.00").format(item.valor_rescate)}&lt;/a&gt;");
+ 
+ pValorRescate.onClick.listen((_){
+   
+   capturaValorRescate(item);
+   
+ });
+ 
+ td = new TableCellElement()..style.textAlign = "right"..id = "pp_valor_rescate${item.id}"..children.add(pValorRescate);
+ tr.children.add(td);
+ 
+ td = new TableCellElement()..text = new intl.NumberFormat("#,##0.00").format(item.importe_rescate)..style.textAlign = "right"..id = "pp_importe_rescate${item.id}";
+ tr.children.add(td);
+ 
+ String pHtmlBtn = "&lt;button class='btn edit_btn'&gt;&lt;i class='icon-list'&gt;&lt;/i&gt;&lt;/button&gt;";
+ ButtonElement btn = new Element.html(pHtmlBtn)..id = 'btnCostoMaquila${item.id.toString()}'..onClick.listen((_){
+     costoMaquila(item);
+ });
+ 
+ td = new TableCellElement()..children.add(btn);
+ tr.children.add(td);
+ 
+ 
+ tableMP.tBodies[0].children.add(tr);
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="actualizaFilaMPrima">
+<button class="show-code">Code</button>
+void <strong>actualizaFilaMPrima</strong>(<a href="OrdenPP/OrdenMP.html">OrdenMP</a> item) <a class="anchor-link" href="#actualizaFilaMPrima"
+              title="Permalink to actualizaFilaMPrima">#</a></h4>
+<div class="doc">
+<pre class="source">
+void actualizaFilaMPrima(OrdenMP item){
+ 
+ (querySelector("#mp_costo${item.id}") as TableCellElement).text = new intl.NumberFormat("#,##0.00").format(item.costo_salida);
+ (querySelector("#mp_importe_costo${item.id}") as TableCellElement).text = new intl.NumberFormat("#,##0.00").format(item.importe_salida);
+ (querySelector("#mp_saldo_sap${item.id}") as TableCellElement).text = new intl.NumberFormat("#,##0.00").format(item.saldo_sap);
+ 
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="agregaFilaMPrima">
+<button class="show-code">Code</button>
+void <strong>agregaFilaMPrima</strong>(<a href="OrdenPP/OrdenMP.html">OrdenMP</a> item) <a class="anchor-link" href="#agregaFilaMPrima"
+              title="Permalink to agregaFilaMPrima">#</a></h4>
+<div class="doc">
+<pre class="source">
+void agregaFilaMPrima(OrdenMP item){
+ 
+   TableElement tableMP = querySelector("#tableMPrima");
+   
+   TableRowElement tr = new TableRowElement()..id = item.id.toString();
+   TableCellElement td = new TableCellElement()..text = item.producto;
+   tr.children.add(td);
+   td = new TableCellElement()..text = item.codigosap;
+   tr.children.add(td);
+   td = new TableCellElement()..text = item.descripcion;
+   tr.children.add(td);
+   td = new TableCellElement()..text = new intl.NumberFormat("#,##0.00").format(item.kilos)..style.textAlign = "right";
+   tr.children.add(td);
+   td = new TableCellElement()..text = new intl.NumberFormat("#,##0.00").format(item.surtido)..style.textAlign = "right";
+   tr.children.add(td);
+   td = new TableCellElement()..text = item.cajas.toString()..style.textAlign = "right";
+   tr.children.add(td);
+   td = new TableCellElement()..text = new intl.NumberFormat("#,##0.00").format(item.saldo_sap)..style.textAlign = "right"..id = "mp_saldo_sap${item.id}";
+   tr.children.add(td);
+   td = new TableCellElement()..text = new intl.NumberFormat("#,##0.00").format(item.costo_salida)..style.textAlign = "right"..id = "mp_costo${item.id}";
+   tr.children.add(td);
+   td = new TableCellElement()..text = new intl.NumberFormat("#,##0.00").format(item.importe_salida)..style.textAlign = "right"..id = "mp_importe_costo${item.id}";
+   tr.children.add(td);
+   
+   String pHtmlBtn = "&lt;button class='btn edit_btn'&gt;&lt;i class='icon-list'&gt;&lt;/i&gt;&lt;/button&gt;";
+   ButtonElement btn = new Element.html(pHtmlBtn)..id = 'btnDetalleOrden${item.id.toString()}'..onClick.listen((_){
+       detalleOrden(item);
+   });
+   
+   td = new TableCellElement()..children.add(btn);
+   tr.children.add(td);
+   
+   
+   tableMP.tBodies[0].children.add(tr);
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="ObtenerIdOrden">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>ObtenerIdOrden</strong>() <a class="anchor-link" href="#ObtenerIdOrden"
+              title="Permalink to ObtenerIdOrden">#</a></h4>
+<div class="doc">
+<pre class="source">
+String ObtenerIdOrden(){
+   String p_querySelector_string = window.location.search;
+   String p_orden = p_querySelector_string.split("&amp;")[0];
+   p_orden = p_orden.split("=")[1];
+   return p_orden;
+}
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        <div class="footer">
+          <div>This page was generated at 2014-01-16 10:01:29.677</div>
+        </div>
+        <script async src="client-static.js"></script>
+        </body></html>
+        

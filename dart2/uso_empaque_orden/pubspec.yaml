@@ -1,0 +1,4 @@
+name: uso_empaque_orden
+description: A sample web application
+dependencies:
+  browser: any

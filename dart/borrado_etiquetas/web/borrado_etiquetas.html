@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>borrado_etiquetas_detalle</title>
+    <link rel='stylesheet' href="borrado_etiquetas.css">
+  </head>
+  <body>
+    <h1>borrado_etiquetas_detalle</h1>
+    <div id='sample_container_id'>
+      <div>
+        <div><input type="button" value="Modificar" id="btnPermiteEdicion" on-click="modificar()"></div>
+      </div>
+      <table class="table"  style="border-collapse:separate; border-spacing:15px;">
+        <thead>
+          <tr>
+            <th style="display:none;">id</th>
+            <th>id_borrado</th>
+            <th>fecha</th>
+            <th>folio</th>
+            <th>codigo_barras</th>
+            <th>motivo</th>
+            <th>aplicada</th>
+            <th template instantiate="if modo_insercion"></th>
+          </tr>
+          <tr template instantiate="if permite_edicion">
+            <th style="display:none;"><input type="text" id="id" value="0" disabled="disabled"></th>
+            <th><input type="text" id="id_borrado" value=""></th>
+            <th><input type="text" id="fecha" value=""></th>
+            <th><input type="text" id="folio" value=""></th>
+            <th><input type="text" id="codigo_barras" value=""></th>
+            <th><input type="text" id="motivo" value=""></th>
+            <th><input type="text" id="aplicada" value=""></th>
+            <th template instantiate="if permite_edicion"><input type="button" id="btnAgregar" value="Agregar" on-click="agregar()"><template instantiate="if !modo_insercion"><input type="button" id="btnCancelar" value="Cancelar" on-click="cancelar()"></template></th>
+          </tr>
+        </thead>
+        <tbody template iterate="item in lista_borrado_etiquetas_detalle">
+          <tr template instantiate="if modo_insercion">
+            <td style='display:none;'>{{item.id}}</td>
+            <td>{{item.id_borrado}}</td>
+            <td>{{item.fecha}}</td>
+            <td>{{item.folio}}</td>
+            <td>{{item.codigo_barras}}</td>
+            <td>{{item.motivo}}</td>
+            <td>{{item.aplicada}}</td>
+            <td template instantiate="if modo_insercion && permite_edicion"><a href="#" on-click="eliminar(item);" class="boton_eliminar">x</a>&nbsp&nbsp<a href="#" on-click="editar(item)" class="boton_editar">m</a></td>
+          </tr>
+        </tbody>
+        <tfoot>
+        </tfoot>
+      </table>
+    </div>
+    <script type="application/dart" src="borrado_etiquetas.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>

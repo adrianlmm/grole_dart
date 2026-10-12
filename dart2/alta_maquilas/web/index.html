@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script defer src="main.dart" type="application/dart"></script>
+    <script defer src="packages/browser/dart.js"></script>
+</head>
+<body>
+<input type="hidden" id="inpId" name="id" value="0"/>
+<h3 id="hTitulo"></h3>
+<div id="header">
+    <div style="clear:both;">
+        <div style="float:left; margin-left: 5px;">
+            <div>
+                Cliente
+            </div>
+            <div>
+                <select id="inpCliente" name="cliente">
+                    <option value="0">Todos</option>
+                </select>
+            </div>
+        </div>
+        <div style="float:left; margin-left: 5px;">
+            <div>
+                Fecha
+            </div>
+            <div>
+                <input type='text' id="inpFecha" name="fecha" value="09/11/2016"/>
+            </div>
+        </div>
+    </div>
+    <div style="clear:both;">
+        <div style="float:left; margin-left: 5px;">
+            <div>
+                Folio Factura
+            </div>
+            <div>
+                <input type='text' id="inpFolioFactura" name="folio_factura" value=""/>
+            </div>
+        </div>
+        <div style="float:left; margin-left: 5px;">
+            <div>
+                Canales
+            </div>
+            <div>
+                <input type='text' id="inpCantidadTotal" name="cantidadtotal" value="0"/>
+            </div>
+        </div>
+        <div style="float:left; margin-left: 5px;">
+            <div>
+                Peso
+            </div>
+            <div>
+                <input type='text' id="inpPesoFactura" name="pesofactura" value="0.0"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="clear: both; margin-top: 50px;">
+    <button id="btnGuardar">Guardar</button>&nbsp;<button id="btnCancelar">Cancelar</button>
+</div>
+</body>
+</html>

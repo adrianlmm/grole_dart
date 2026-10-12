@@ -1,0 +1,252 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>SalidaInventario class / SalidaInventario Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="SalidaInventario" data-type="SalidaInventario">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../SalidaInventario.html">SalidaInventario</a> &rsaquo; <a href="../SalidaInventario/SalidaInventario.html">SalidaInventario</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+<h2><div class="icon-library"></div><a href="../date_format_internal.html">date_format_internal</a></h2><h2><div class="icon-library"></div><a href="../date_symbols.html">date_symbols</a></h2><h2><div class="icon-library"></div><a href="../DetalleMP.html">DetalleMP</a></h2><h2><div class="icon-library"></div><a href="../intl.html">intl</a></h2><h2><div class="icon-library"></div><a href="../intl_helpers.html">intl_helpers</a></h2><h2><div class="icon-library"></div><a href="../LibOrdenProduccion.html">LibOrdenProduccion</a></h2><h2><div class="icon-library"></div><a href="../meta.html">meta</a></h2><h2><div class="icon-library"></div><a href="../metadata.html">metadata</a></h2><h2><div class="icon-library"></div><a href="../ModalP.html">ModalP</a></h2><h2><div class="icon-library"></div><a href="../number_symbols.html">number_symbols</a></h2><h2><div class="icon-library"></div><a href="../number_symbol_data.html">number_symbol_data</a></h2><h2><div class="icon-library"></div><a href="../OrdenPP.html">OrdenPP</a></h2><h2><div class="icon-library"></div><a href="../SalidaInventario.html">SalidaInventario</a></h2><ul class="icon">
+<li><a href="../SalidaInventario/LineaSalidaInventario.html"><div class="icon-class"></div>LineaSalidaInventario</a></li>
+<li><div class="icon-class"></div><strong>SalidaInventario</strong></li>
+</ul>
+<h2><div class="icon-library"></div><a href="../surtir_orden.dart.html">surtir_orden.dart</a></h2></div>
+<div class="content">
+        <h2><strong>SalidaInventario</strong>
+          class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<pre class="source">
+class SalidaInventario
+{
+   String DocDate;
+   String TaxDate;
+   String Series;
+   String Reference2;
+   String Comments;
+   String OrdenProduccion;
+   String FolioSalida;
+
+   List&lt;LineaSalidaInventario&gt; Lineas;
+
+   SalidaInventario()
+   {
+       this.Lineas = new List&lt;LineaSalidaInventario&gt;();
+   }
+   
+   toJSON(){
+       Map pMap = new Map();
+       pMap["DocDate"]         = this.DocDate;
+       pMap["TaxDate"]         = this.TaxDate;
+       pMap["Series"]          = this.Series;
+       pMap["Reference2"]      = this.Reference2;
+       pMap["Comments"]        = this.Comments;
+       pMap["OrdenProduccion"] = this.OrdenProduccion;
+       pMap["FolioSalida"]     = this.FolioSalida;
+       pMap["Lineas"]          = new List&lt;Map&gt;();
+       
+       for (LineaSalidaInventario item in this.Lineas){
+           Map pMapaLinea = new Map();
+           
+           pMapaLinea["ItemCode"]      = item.ItemCode;
+           pMapaLinea["Quantity"]      = item.Quantity.toDouble();
+           pMapaLinea["WarehouseCode"] = item.WarehouseCode;
+           pMapaLinea["AccountCode"]   = item.AccountCode;
+           pMapaLinea["CostingCode"]   = item.CostingCode;
+           
+           pMap["Lineas"].add(pMapaLinea);
+       }
+       
+       return JSON.encode(pMap);
+   }
+   
+}
+</pre>
+</div>
+<div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="">
+<button class="show-code">Code</button>
+new <strong>SalidaInventario</strong>() <a class="anchor-link" href="#"
+              title="Permalink to SalidaInventario.SalidaInventario">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Creates a new <a class="crossref" href="../dart_core/Object.html">Object</a> instance.</p>
+<p><a class="crossref" href="../dart_core/Object.html">Object</a> instances have no meaningful state, and are only useful
+through their identity. An <a class="crossref" href="../dart_core/Object.html">Object</a> instance is equal to itself
+only.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+SalidaInventario()
+{
+   this.Lineas = new List&lt;LineaSalidaInventario&gt;();
+}
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field"><h4 id="Comments">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>Comments</strong> <a class="anchor-link"
+            href="#Comments"
+            title="Permalink to SalidaInventario.Comments">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+String Comments
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="DocDate">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>DocDate</strong> <a class="anchor-link"
+            href="#DocDate"
+            title="Permalink to SalidaInventario.DocDate">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+String DocDate
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="FolioSalida">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>FolioSalida</strong> <a class="anchor-link"
+            href="#FolioSalida"
+            title="Permalink to SalidaInventario.FolioSalida">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+String FolioSalida
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="Lineas">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../SalidaInventario/LineaSalidaInventario.html">LineaSalidaInventario</a>&gt;         <strong>Lineas</strong> <a class="anchor-link"
+            href="#Lineas"
+            title="Permalink to SalidaInventario.Lineas">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+List&lt;LineaSalidaInventario&gt; Lineas
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="OrdenProduccion">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>OrdenProduccion</strong> <a class="anchor-link"
+            href="#OrdenProduccion"
+            title="Permalink to SalidaInventario.OrdenProduccion">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+String OrdenProduccion
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="Reference2">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>Reference2</strong> <a class="anchor-link"
+            href="#Reference2"
+            title="Permalink to SalidaInventario.Reference2">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+String Reference2
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="Series">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>Series</strong> <a class="anchor-link"
+            href="#Series"
+            title="Permalink to SalidaInventario.Series">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+String Series
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="TaxDate">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>TaxDate</strong> <a class="anchor-link"
+            href="#TaxDate"
+            title="Permalink to SalidaInventario.TaxDate">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+String TaxDate
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toJSON">
+<button class="show-code">Code</button>
+dynamic <strong>toJSON</strong>() <a class="anchor-link" href="#toJSON"
+              title="Permalink to SalidaInventario.toJSON">#</a></h4>
+<div class="doc">
+<pre class="source">
+toJSON(){
+   Map pMap = new Map();
+   pMap["DocDate"]         = this.DocDate;
+   pMap["TaxDate"]         = this.TaxDate;
+   pMap["Series"]          = this.Series;
+   pMap["Reference2"]      = this.Reference2;
+   pMap["Comments"]        = this.Comments;
+   pMap["OrdenProduccion"] = this.OrdenProduccion;
+   pMap["FolioSalida"]     = this.FolioSalida;
+   pMap["Lineas"]          = new List&lt;Map&gt;();
+   
+   for (LineaSalidaInventario item in this.Lineas){
+       Map pMapaLinea = new Map();
+       
+       pMapaLinea["ItemCode"]      = item.ItemCode;
+       pMapaLinea["Quantity"]      = item.Quantity.toDouble();
+       pMapaLinea["WarehouseCode"] = item.WarehouseCode;
+       pMapaLinea["AccountCode"]   = item.AccountCode;
+       pMapaLinea["CostingCode"]   = item.CostingCode;
+       
+       pMap["Lineas"].add(pMapaLinea);
+   }
+   
+   return JSON.encode(pMap);
+}
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        <div class="footer">
+          <div>This page was generated at 2014-01-16 10:01:29.667</div>
+        </div>
+        <script async src="../client-static.js"></script>
+        </body></html>
+        

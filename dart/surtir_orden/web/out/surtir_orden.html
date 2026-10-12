@@ -1,0 +1,437 @@
+
+<!-- This file was auto-generated from web/surtir_orden.html. -->
+<html><head><style>template { display: none; }</style>
+     <meta charset="utf-8">
+    <title> Control de Rastro Grole 3</title>
+    <!--<link href="/styles/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/styles/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">>-->
+    <link href="../styles/site.css" rel="stylesheet" type="text/css">
+    <link href="../styles/custom-theme/jquery-ui-1.8.19.custom.css" rel="stylesheet" type="text/css">
+    <!--<link href="/scripts/jquery-ui.css" rel="stylesheet" type="text/css" />-->
+    <script src="../scripts/jquery-1.7.1.js"></script>
+    <script src="../scripts/grole.js"></script>
+    <script src="../scripts/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="../scripts/jquery.ui.datepicker-es.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../scripts/jquery.tablescroll.css">
+    <script type="text/javascript" src="../scripts/jquery.tablescroll.js"></script>
+    <script type="text/javascript" language="javascript" src="../scripts/datatable/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" language="JavaScript" src="../scripts/jquery.columnfilters.js"></script>
+    <script type="text/javascript" language="JavaScript" src="../scripts/dart.js"></script>
+    <link href="../styles/bootstrap/css/bootstrap.css" rel="stylesheet">
+    
+    <style type="text/css">.hiden {
+  display: none;
+}
+.oculto {
+  display: none;
+}
+.body {
+  background-color: #5c87b2;
+}
+.label_ {
+  color: #fff;
+  text-decoration: none;
+}
+.colFecha {
+  text-align: center;
+  width: 100px;
+}
+.colClave {
+  text-align: left;
+  width: 100px;
+}
+.colDescripcion {
+  text-align: left;
+  width: 100px;
+}
+.colNumero {
+  text-align: right;
+  width: 100px;
+}</style>
+  </head>
+ <body class="body">
+   <input type="hidden" id="inpEditable" value="false">
+   <div class="page">
+        <div id="header">
+            <div id="title">
+                <h1>Control de Rastro Grole</h1>
+            </div>
+      <br>
+            <div id="logindisplay">
+          Bienvenido(a) <strong>sistemas</strong>! [ <a href="../menu">Menu</a> ] [ <a href="../logoff">Salir</a> ]
+            </div>
+            <div id="menucontainer">
+                <ul id="menu">
+                    <li><a href="..">Inicio</a></li>
+                    <li><a href="../Home/About">Acerca de</a></li>
+                </ul>
+            </div>
+        </div>
+   <div id="main">
+     
+   
+    <div is="x-modal" id="mdlAgregarProductos" class="hiden">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">Seleccionar Salida</h3>
+        </div>
+        <div class="modal-body">
+          
+          <form class="form-horizontal">
+            <div class="control-group">
+              <label class="control-label" for="pClave">Clave:</label>
+                <div class="controls">
+                  <input type="text" id="pClave" autofocus="">
+                </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="pDescripcion">Descripción:</label>
+                <div class="controls">
+                  <input type="text" id="pDescripcion" disabled="">
+                </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="pKilos">Kilos:</label>
+                <div class="controls">
+                  <input type="text" id="pKilos" value="0.0" disabled="">
+                </div>
+            </div>
+          </form>
+          
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+          <button class="btn btn-primary">Seleccionar</button>
+        </div>  
+    </div>
+    
+    <input type="hidden" id="id">
+    <input type="hidden" id="id_usuario_embarques" value="1">
+    <input type="hidden" id="id_usuario" value="4">
+    <input type="hidden" id="id_tipo" value="1">
+    <div class="container">
+      <h2>Orden de producción <span id="spanId"></span>, estado: <span id="spanEstado"></span>&nbsp;<span id="spanFolioSalida"></span></h2>
+      <div class="row">
+        <div class="span3" style="margin-left: 0px;">
+          <div>
+            <h5>Descripción:</h5>
+          </div>
+          <div>
+            <input type="text" id="id_orden" class="input-large" disabled="disabled">  
+          </div>
+        </div>
+        <div class="span3">
+          <div>
+            <h5>Fecha de Producción:</h5>
+          </div>
+          <div>
+            <input type="text" id="fecha" disabled="disabled">  
+          </div>
+        </div>  
+        <div class="span3">
+          <div>
+            <h5>Lote de Producción:</h5>
+          </div>
+          <div>
+            <input type="number" id="lote_produccion" class="input-small" disabled="disabled">  
+          </div>
+        </div>  
+      </div>
+      
+      <div class="row">
+        <h4>Materia Prima</h4>&nbsp;<button style="margin-bottom: 5px;">Imprimir</button>&nbsp;<button id="btnGeneraSalida" class="hiden" style="margin-bottom: 5px;">Crear Salida</button>
+        <!--<div>
+          <button class="btn" on-click="agregar()" style="margin-bottom: 10px;"><i class="icon-th"></i></button>
+        </div>-->    
+      </div>
+      
+      <div class="row">
+        <table class="table" style="margin-bottom: 0px;">
+          <thead>
+            <tr>
+              <th style="width: 60px; padding:4px;">Clave</th>
+              <th style="width: 60px; padding:4px;">Clave SAP</th>
+              <th style="width: 450px; padding:4px;">Descripción</th>
+              <th style="width: 150px; padding:4px; text-align: right;">Kilos</th>
+              <th style="width: 150px; padding:4px; text-align: right;"><a href="#">Surtido</a></th>
+              <th style="width: 150px; padding:4px; text-align: right;">Cajas</th>
+              <th style="width: 150px; padding:4px; text-align: right;"><a href="#">Saldo SAP</a></th>
+              <th style="width: 150px; padding:4px; text-align: right;">Costo</th>
+              <th style="width: 150px; padding:4px; text-align: right;">Importe</th>
+              <th style="width: 31px;"></th>
+            </tr>
+          </thead>
+        </table>
+        <div style="overflow-y: auto; height: 180px;">
+            <table class="table" style="margin-bottom: 0px;">
+                <tbody style="display:none"></tbody>
+            </table>  
+        </div>
+        <table class="table" style="margin-bottom: 0px;">
+          <tfoot>
+            <tr>
+              <th style="width: 60px; padding:4px;"></th>
+              <th style="width: 60px; padding:4px;"></th>
+              <th style="width: 450px; padding:4px;"></th>
+              <th style="width: 150px; padding:4px; text-align: right;"><span id="TotalKilosP"></span></th>
+              <th style="width: 150px; padding:4px; text-align: right;"><span id="TotalSurtidoP"></span></th>
+              <th style="width: 150px; padding:4px; text-align: right;"><span id="TotalSaldoSAPP"></span></th>
+              <th style="width: 150px; padding:4px; text-align: right;"><span id="TotalCostoP"></span></th>
+              <th style="width: 150px; padding:4px; text-align: right;"><span id="TotalImporteP"></span></th>
+              <th style="width: 31px;"></th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+            
+      <div class="row" style="clear: both;">
+        <h4>Producido</h4>
+      </div>
+      <div>
+        <button id="btnEntrada" style="margin-bottom: 5px; margin-left: -15px;" class="hiden">Crear Entrada</button>
+      </div>
+      <div class="row">
+        <table class="table" style="margin-bottom: 0px; font-size: 12px">
+          <thead>
+            <tr>
+              <th style="width: 60px; padding:4px;">Factura</th>
+              <th style="width: 60px; padding:4px;">Clave</th>
+              <th style="width: 60px; padding:4px;">Clave SAP</th>
+              <th style="width: 1000px; padding:4px;">Descripción</th>
+              <th style="width: 150px; padding:4px; text-align: right; padding-right: 20px;">Programado</th>
+              <th style="width: 150px; padding:4px; text-align: right; padding-right: 20px;">Producido</th>
+              <th style="width: 150px; padding:4px; text-align: right; padding-right: 20px;">Porcentaje</th>
+              <th style="width: 150px; padding:4px; text-align: right; padding-right: 20px;">Cajas</th>
+              <th style="width: 150px; padding:4px; text-align: right; padding-right: 20px;">Costo Maquila</th>
+              <th style="width: 150px; padding:4px; text-align: right; padding-right: 20px;">Total Maquila</th>
+              <th style="width: 150px; padding:4px; text-align: right; padding-right: 20px;">Valor Rescate</th>
+              <th style="width: 150px; padding:4px; text-align: right; padding-right: 20px;">Importe Rescate</th>
+              <th style="padding:4px;"></th>
+            </tr>
+          </thead>
+        </table>
+        <div style="overflow-y: auto; height: 180px;"> 
+          <table class="table" style="margin-bottom: 0px; font-size: 12px"> 
+            <tbody style="display:none"></tbody>
+          </table>  
+        </div>
+        <table class="table" style="font-size: 12px">
+          <tfoot>
+              <tr>
+                <th style="width: 60px; padding:4px;"></th>
+                <th style="width: 60px; padding:4px;"></th>
+                <th style="width: 60px; padding:4px;"></th>
+                <th style="width: 450px; padding:4px;"></th>
+                <th style="width: 150px; padding:4px; text-align: right; padding-right: 20px;"><span id="TotalProgramado"></span></th>
+                <th style="width: 150px; padding:4px; text-align: right; padding-right: 20px;"><span id="TotalProducido"></span></th>
+                <th style="width: 150px; padding:4px; text-align: right; padding-right: 20px;"></th>
+                <th style="width: 150px; padding:4px; text-align: right; padding-right: 20px;"><span id="TotalCajas"></span></th>
+                <th style="width: 150px; padding:4px; text-align: right; padding-right: 20px;"><span id="TotalCostoMaquila"></span></th>
+                <th style="width: 150px; padding:4px; text-align: right; padding-right: 20px;"><span id="TotalImporteMaquila"></span></th>
+                <th style="width: 150px; padding:4px; text-align: right; padding-right: 20px;"><span id="TotalValorRescate"></span></th>
+                <th style="width: 150px; padding:4px; text-align: right; padding-right: 20px;"><span id="TotalImporteRescate"></span></th>
+                <th style="width: 31px;"></th>
+              </tr>
+          </tfoot>
+        </table>  
+      </div>
+      
+      <div class="row">
+        <div clas="span12">
+          <button class="btn-primary" id="btnSalida">Crear Salida</button>&nbsp;<button class="btn">Cancelar</button>
+        </div>    
+      </div>  
+      
+    </div>
+    
+    <script src="../packages/browser/dart.js"></script>
+    </div>
+   </div>
+    
+   <div id="divDetalladoTarima" style="position: fixed; overflow-y: auto; width: 80%; height: 450px; z-index: 9999; display: float; background-color: white; top: 100px; left: 10%; border: solid 1px black;" class="oculto">
+        <h3 style="margin-left: 20%;">Detalle de Surtido</h3>
+        <button style="margin-left: 20%;">Cerrar</button>
+        <table style="margin-left: 20%; width: 60%; margin-top: 30px;">
+            <thead>
+                <tr>
+                    <th>Tarima</th>
+                    <th>Producto</th>
+                    <th>Codigo Barras</th>
+                    <th style="text-align: right">Peso</th>
+                </tr>  
+            </thead>
+            <tbody style="display:none"></tbody>
+        </table>  
+   </div>
+   
+   <div id="divDetalle" style="position: fixed; overflow-y: auto; width: 80%; height: 450px; z-index: 999; display: float; background-color: white; top: 100px; left: 10%; border: solid 1px black;" class="oculto">
+        <h3 style="margin-left: 20%;">Detalle de Surtido</h3>
+        <button style="margin-left: 20%;">Cerrar</button>
+        <table style="margin-left: 20%; width: 60%; margin-top: 30px;">
+            <thead>
+                <tr>
+                    <th>Tarima</th>
+                    <th>Producto</th>
+                    <th>Codigo Barras</th>
+                    <th style="text-align: right">Peso</th>
+                </tr>  
+            </thead>
+            <tbody style="display:none"></tbody>
+        </table>  
+   </div>
+   
+   <div id="divDetalleTarima" style="position: fixed; overflow-y: auto; width: 80%; height: 450px; z-index: 999; display: float; background-color: white; top: 100px; left: 10%; border: solid 1px black;" class="oculto">
+        <h3 style="margin-left: 20%;">Detalle de Surtido</h3>
+        <button style="margin-left: 20%;">Cerrar</button>
+        <table style="margin-left: 20%; width: 60%; margin-top: 30px;">
+            <thead>
+                <tr>
+                    <th>Tarima</th>
+                    <th style="text-align: right">Cajas</th>
+                    <th style="text-align: right">Kilos</th>
+                </tr>  
+            </thead>
+            <tbody style="display:none"></tbody>
+        </table>  
+   </div>
+   
+   <div is="x-modal" id="mdlAgregarCosto" class="hiden">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">Costo Salida</h3>
+        </div>
+        <div class="modal-body">
+          
+          <form class="form-horizontal">
+            <div class="control-group">
+              <label class="control-label" for="mClave">Costo:</label>
+                <div class="controls">
+                  <input type="text" id="mCosto" autofocus="">
+                </div>
+            </div>
+          </form>
+          
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+          <button class="btn btn-primary" id="btnCostoAceptar">Agregar</button>
+        </div>  
+    </div>
+    
+    <div is="x-modal" id="mdlCostoMaquila" class="hiden">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">Costo Maquila</h3>
+        </div>
+        <div class="modal-body">
+          
+          <form class="form-horizontal">
+            <div class="control-group">
+              <label class="control-label" for="mClave">Costo Maquila:</label>
+                <div class="controls">
+                  <input type="text" id="mCostoMaquila" autofocus="">
+                </div>
+            </div>
+          </form>
+          
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+          <button class="btn btn-primary" id="btnCostoMaquilaAceptar">Agregar</button>
+        </div>  
+    </div>
+    
+    <div is="x-modal" id="mdlPassword" class="hiden">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">Password</h3>
+        </div>
+        <div class="modal-body">
+          
+          <form class="form-horizontal">
+            <div class="control-group">
+              <label class="control-label" for="mPassword">Contraseña:</label>
+                <div class="controls">
+                  <input type="password" id="mPassword" autofocus="">
+                </div>
+            </div>
+          </form>
+          
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+          <button class="btn btn-primary" id="btnPasswordAceptar">Aceptar</button>
+        </div>  
+    </div>
+    
+    <div is="x-modal" id="mdlPassword2" class="hiden">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">Password</h3>
+        </div>
+        <div class="modal-body">
+          
+          <form class="form-horizontal">
+            <div class="control-group">
+              <label class="control-label" for="mPassword">Contraseña:</label>
+                <div class="controls">
+                  <input type="password" id="mPassword2" autofocus="">
+                </div>
+            </div>
+          </form>
+          
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+          <button class="btn btn-primary" id="btnPasswordAceptar2">Aceptar</button>
+        </div>  
+    </div>
+    
+    <div is="x-modal" id="mdlDetalleProducido" class="hiden">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">Fechas de Producción</h3>
+        </div>
+        <div class="modal-body">
+          
+          <div id="divDetalleProducido">
+          </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+          <button class="btn btn-primary" id="btnPasswordAceptar">Aceptar</button>
+        </div>  
+    </div>
+    
+    <div is="x-modal" id="mdlValorRescate" class="hiden">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">Valor de Rescate</h3>
+        </div>
+        <div class="modal-body">
+          
+          <form class="form-horizontal">
+            <div class="control-group">
+              <label class="control-label" for="inpValorRescate">Valor:</label>
+                <div class="controls">
+                  <input type="text" id="inpValorRescate" autofocus="">
+                </div>
+            </div>
+          </form>
+          
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+          <button class="btn btn-primary" id="btnValorRescateAceptar">Aceptar</button>
+        </div>  
+    </div>
+   
+    <script type="text/javascript">
+      $(document).ready(function () {
+                $.datepicker.setDefaults($.datepicker.regional['es']);
+                $("#fecha").datepicker({ changeMonth: true, changeYear: true });
+            });
+  </script>
+  
+<script type="application/dart" src="surtir_orden.html_bootstrap.dart"></script></body></html>

@@ -1,0 +1,6 @@
+name: orden_salida
+description: A sample web application
+dependencies:
+  browser: any
+  intl: any
+  quickdialogs: 1.4.1

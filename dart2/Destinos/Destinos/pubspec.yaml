@@ -1,0 +1,6 @@
+name: Destinos
+description: A sample WebUI application
+dependencies:
+  js: any
+  browser:
+    path: E:\grole\dart\Clases\Clases\packages\web_ui

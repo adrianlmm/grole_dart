@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="scaffolded-by" content="https://github.com/dart-lang/stagehand">
+    <title>uso_empaque_orden</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+    <script defer src="main.dart.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <h3>Uso empaque ordenes de producción</h3>
+    <div>
+        Orden de Producción:
+    </div>
+    <div>
+        <input type="text" id="inpOrden" autofocus><button id="btnConsultar">Consultar</button>
+    </div>
+    <div>
+      <div>
+        <a id="aExcel" href="data:application/text,demodmeodmeode">Excel</a>
+      </div>
+      <table class="table" id="tablaUsoEmpaque">
+          <thead>
+              <tr>
+                  <th>Orden</th>
+                  <th>Código</th>
+                  <th>Descripción</th>
+                  <th style="text-align: right;">Cantidad usada</th>
+                  <th style="text-align: right;">Cantidad entregada</th>
+                  <th style="text-align: right;">Diferencia</th>
+                  <th style="text-align: right;">Costos</th>
+                  <th style="text-align: right;">Cantidad usada $</th>
+                  <th style="text-align: right;">Cantidad entregada $</th>
+                  <th style="text-align: right;">Diferencia $</th>
+              </tr>
+          </thead>
+          <tbody>
+          </tbody>
+          <tfoot>
+            <tr>
+                <th></th>
+              <th></th>
+              <th></th>
+              <th style="text-align: right;"><span id="spanTotalUsoEmpaque"></span></th>
+              <th style="text-align: right;"><span id="spanTotalCantidadEntregada"></span></th>
+              <th style="text-align: right;"><span id="spanTotalDiferencia"></span></th>
+              <th style="text-align: right;"><span id="spanTotalCostos"></span></th>
+              <th style="text-align: right;"><span id="spanTotalGeneral"></span></th>
+              <th style="text-align: right;"><span id="spanTotalGeneral2"></span></th>
+              <th style="text-align: right;"><span id="spanTotalDiferenciaM"></span></th>
+            </tr>  
+          </tfoot>
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="scaffolded-by" content="https://github.com/dart-lang/stagehand">
+    <title>detalle_costos_maquila</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+    <script defer src="main.dart.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <style>
+    
+      .oculto{
+          display: none;
+      }
+      
+      .edit_btn{
+        margin-left: 5px;
+      }
+    
+    </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Detalle costos maquila, Folio: <span id="spanFolio">44</span></h1>
+    <input type="hidden" id="folio" value="44">
+    <input type="hidden" id="activo" value="Si">
+    <div>
+      <div style="float:left; margin-left: 5px;">
+        <div>Fecha Inicial:</div>
+        <div>
+          <input type="text" id="inpFecha" class="input-small" value="23/10/2013" autofocus>
+        </div>
+      </div>
+      <div style="float:left; margin-left: 5px;">
+        <div>Fecha Final:</div>
+        <div>
+          <input type="text" id="inpFechaFinal" class="input-small" value="23/10/2013" autofocus>
+        </div>
+      </div>
+      <div style="float:left; margin-left: 20px;">
+        <div>Descripción:</div>
+        <div>
+          <input type="text" id="inpDescripcionM" value="">
+        </div>
+      </div>
+      <div style="float:left; margin-left: 20px;">
+        <div>Activo:</div>
+        <div>
+          <select id="inpActivo">
+              <option>Si</option>
+              <option>No</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    
+    <table id="gridDetalleCostosMaquila" class="table">
+    
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Nombre</th>
+                <th>Costo</th>
+                <th></th>
+            </tr>
+            <tr>
+                <th><input type="text" id="inpProducto"></th>
+                <th><input type="text" readonly id="inpDescripcion"></th>
+                <th><input type="text" id="inpCosto"></th>
+                <th>
+                  <select id="inpCC">
+                    <option value="DE1">DE1 Sacrificio</option>
+                    <option value="DE2">DE2 Corte</option>
+                    <option value="DE3">DE3 Porcionados</option>
+                    <option value="DE25">DE25 Mejorado de Cerdos</option>
+                    <option value="DE26">DE26 Mejorado de Ave</option>
+                    <option value="DE27">DE27 Ahumados</option>
+                    <option value="DE30">DE30 Procesados Crudo</option>
+                  </select>
+                </th>
+                <th><button class="btn" id="btnAgregar" style="margin-bottom: 10px;"><i class="icon-plus"></i></button></th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    
+    </table>
+    <div>
+      <button id="btnAceptar" class="btn">Aceptar</button>&nbsp;<button id="btnCancelar" class="btn">Cancelar</button>
+    </div>
+</div>
+
+</body>
+</html>

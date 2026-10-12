@@ -1,0 +1,7 @@
+name: consulta_mpo
+description: A sample WebUI application
+dependencies:
+  browser: any
+  intl: any
+  js: any
+  web_ui: any
